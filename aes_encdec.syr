@@ -171,7 +171,9 @@ Elaborating entity <round_counter> (architecture <Behavioral>) from library <wor
 
 Synthesizing Unit <aes_encdec>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd".
+    Found 1-bit register for signal <done>.
     Summary:
+	inferred   1 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 Unit <aes_encdec> synthesized.
 
@@ -328,8 +330,8 @@ Macro Statistics
  2-bit adder                                           : 1
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 9
- 1-bit register                                        : 1
+# Registers                                            : 10
+ 1-bit register                                        : 2
  128-bit register                                      : 6
  2-bit register                                        : 1
  4-bit register                                        : 1
@@ -1063,8 +1065,8 @@ Macro Statistics
 # Counters                                             : 2
  2-bit up counter                                      : 1
  4-bit up counter                                      : 1
-# Registers                                            : 769
- Flip-Flops                                            : 769
+# Registers                                            : 770
+ Flip-Flops                                            : 770
 # Comparators                                          : 1
  4-bit comparator lessequal                            : 1
 # Multiplexers                                         : 391
@@ -1107,8 +1109,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 780
- Flip-Flops                                            : 780
+# Registers                                            : 781
+ Flip-Flops                                            : 781
 
 =========================================================================
 
@@ -1141,7 +1143,8 @@ Primitive and Black Box Usage:
 #      LUT6                        : 1784
 #      MUXF7                       : 576
 #      MUXF8                       : 288
-# FlipFlops/Latches                : 780
+# FlipFlops/Latches                : 781
+#      FD                          : 1
 #      FDE                         : 768
 #      FDR                         : 3
 #      FDRE                        : 9
@@ -1156,7 +1159,7 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             780  out of  18224     4%  
+ Number of Slice Registers:             781  out of  18224     4%  
  Number of Slice LUTs:                 2749  out of   9112    30%  
     Number used as Logic:              2661  out of   9112    29%  
     Number used as Memory:               88  out of   2176     4%  
@@ -1164,13 +1167,13 @@ Slice Logic Utilization:
 
 Slice Logic Distribution: 
  Number of LUT Flip Flop pairs used:   3007
-   Number with an unused Flip Flop:    2227  out of   3007    74%  
+   Number with an unused Flip Flop:    2226  out of   3007    74%  
    Number with an unused LUT:           258  out of   3007     8%  
-   Number of fully used LUT-FF pairs:   522  out of   3007    17%  
-   Number of unique control sets:         5
+   Number of fully used LUT-FF pairs:   523  out of   3007    17%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                         389
+ Number of IOs:                         393
  Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
@@ -1193,11 +1196,11 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+-------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)   | Load  |
------------------------------------+-------------------------+-------+
-clk                                | NONE(encrypter/reg2_127)| 803   |
------------------------------------+-------------------------+-------+
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | NONE(done)             | 804   |
+-----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1220,7 +1223,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
   Clock period: 4.898ns (frequency: 204.147MHz)
-  Total number of paths / destination ports: 17547 / 1819
+  Total number of paths / destination ports: 17551 / 1820
 -------------------------------------------------------------------------
 Delay:               4.898ns (Levels of Logic = 4)
   Source:            keyScheduler/keyRAM/Mram_keys4 (RAM)
@@ -1265,7 +1268,7 @@ Offset:              3.332ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 404 / 128
+  Total number of paths / destination ports: 409 / 133
 -------------------------------------------------------------------------
 Offset:              3.510ns (Levels of Logic = 2)
   Source:            roundCounter/round_0 (FF)
@@ -1319,11 +1322,11 @@ clk            |    4.898|         |         |         |
 
 
 Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.69 secs
+Total CPU time to Xst completion: 20.74 secs
  
 --> 
 
-Total memory usage is 284316 kilobytes
+Total memory usage is 280284 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

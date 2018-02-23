@@ -37,6 +37,7 @@ entity aes_encdec is
            key : in  STD_LOGIC_VECTOR (127 downto 0);
            d : in  STD_LOGIC_VECTOR (127 downto 0);
            q : out  STD_LOGIC_VECTOR (127 downto 0);
+			  round : out STD_LOGIC_VECTOR(3 downto 0);
            done : out  STD_LOGIC);
 end aes_encdec;
 
@@ -81,6 +82,7 @@ END COMPONENT round_counter;
 signal encEn : STD_LOGIC;
 signal decEn : STD_LOGIC;
 signal keys_filled : STD_LOGIC;
+signal slow_clk : STD_LOGIC;
 
 signal round_number : STD_LOGIC_VECTOR(3 downto 0);
 signal round_key : STD_LOGIC_VECTOR(127 downto 0);
@@ -91,6 +93,8 @@ signal encOut : STD_LOGIC_VECTOR(127 downto 0);
 signal input : STD_LOGIC_VECTOR(127 downto 0);
 
 begin
+	
+	round <= round_number;
 	
 	encEn <= (en AND NOT dec) AND keys_filled;
 	decEn <= (en AND dec) AND keys_filled;
@@ -105,8 +109,20 @@ begin
 	
 	encrypter : encrypt PORT MAP(clk, encEn, round_number, input, round_key, encOut);
 	decrypter : decrypt PORT MAP(clk, decEn, round_number, input, round_key, decOut);
-	keyScheduler : key_scheduler PORT MAP(clk, w, en, dec, round_number, key, round_key, keys_filled);
+	keyScheduler : key_scheduler PORT MAP(slow_clk, w, en, dec, round_number, key, round_key, keys_filled);
 	roundCounter : round_counter PORT MAP(clk, en, round_number);
+	clockDivider : clock_divider PORT MAP(clk, NOT en, slow_clk);
+	
+	PROCESS(clk)
+	BEGIN
+		if rising_edge(clk) then
+			if round_number = x"a" then
+				done <= '1';
+			else
+				done <= '0';
+			end if;
+		end if;
+	END PROCESS;
 
 end Behavioral;
 
