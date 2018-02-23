@@ -37,7 +37,7 @@ entity aes_encdec is
            key : in  STD_LOGIC_VECTOR (127 downto 0);
            d : in  STD_LOGIC_VECTOR (127 downto 0);
            q : out  STD_LOGIC_VECTOR (127 downto 0);
-           done : out  STD_LOGIC_VECTOR (127 downto 0));
+           done : out  STD_LOGIC);
 end aes_encdec;
 
 
@@ -61,8 +61,62 @@ COMPONENT encrypt is
            next_state : out  STD_LOGIC_VECTOR (127 downto 0));
 END COMPONENT encrypt;
 
-begin
+COMPONENT key_scheduler is
+    Port ( clk : in  STD_LOGIC;
+           w : in  STD_LOGIC;
+			  en : in STD_LOGIC;
+           dec : in  STD_LOGIC;
+           round_number : in  STD_LOGIC_VECTOR (3 downto 0);
+           original_key : in  STD_LOGIC_VECTOR (127 downto 0);
+           round_key : out  STD_LOGIC_VECTOR (127 downto 0);
+			  keys_filled : out STD_LOGIC);
+END COMPONENT key_scheduler;
 
+COMPONENT round_counter is
+    Port ( clk : in  STD_LOGIC;
+           en : in  STD_LOGIC;
+           round_number : out  STD_LOGIC_VECTOR (3 downto 0));
+END COMPONENT round_counter;
+
+signal encEn : STD_LOGIC;
+signal decEn : STD_LOGIC;
+signal keys_filled : STD_LOGIC;
+
+signal round_number : STD_LOGIC_VECTOR(3 downto 0);
+signal round_key : STD_LOGIC_VECTOR(127 downto 0);
+
+signal decOut : STD_LOGIC_VECTOR(127 downto 0);
+signal encOut : STD_LOGIC_VECTOR(127 downto 0);
+
+signal input : STD_LOGIC_VECTOR(127 downto 0);
+
+begin
+	
+	encEn <= (en AND NOT dec) AND keys_filled;
+	decEn <= (en AND dec) AND keys_filled;
+	
+	with dec select input <=
+		(d XOR key) when '0',
+		d when others;
+		
+	with dec select q <=
+		encOut when '0',
+		(decOut XOR key) when others;
+	
+	encrypter : encrypt PORT MAP(clk, encEn, round_number, input, round_key, encOut);
+	decrypter : decrypt PORT MAP(clk, decEn, round_number, input, round_key, decOut);
+	keyScheduler : key_scheduler PORT MAP(clk, w, en, dec, round_number, key, round_key, keys_filled);
+	roundCounter : round_counter PORT MAP(clk, en, round_number);
 
 end Behavioral;
+
+
+
+
+
+
+
+
+
+
 

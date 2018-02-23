@@ -1,0 +1,1331 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Reading design: aes_encdec.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aes_encdec.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "aes_encdec"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : aes_encdec
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Distributed
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : NO
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\sbox.vhd" into library work
+Parsing entity <sbox_shift>.
+Parsing architecture <Behavioral> of entity <sbox_shift>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\mixcolumns.vhd" into library work
+Parsing entity <mixcolumns>.
+Parsing architecture <Behavioral> of entity <mixcolumns>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_ram.vhd" into library work
+Parsing entity <key_ram>.
+Parsing architecture <Behavioral> of entity <key_ram>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_expand.vhd" into library work
+Parsing entity <key_expand>.
+Parsing architecture <Behavioral> of entity <key_expand>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\inv_sbox.vhd" into library work
+Parsing entity <inv_sbox>.
+Parsing architecture <Behavioral> of entity <inv_sbox>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\inv_mixcolumns.vhd" into library work
+Parsing entity <inv_mixcolumns>.
+Parsing architecture <Behavioral> of entity <inv_mixcolumns>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\round_counter.vhd" into library work
+Parsing entity <round_counter>.
+Parsing architecture <Behavioral> of entity <round_counter>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_scheduler.vhd" into library work
+Parsing entity <key_scheduler>.
+Parsing architecture <Behavioral> of entity <key_scheduler>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\encrypt.vhd" into library work
+Parsing entity <encrypt>.
+Parsing architecture <Behavioral> of entity <encrypt>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\decrypt.vhd" into library work
+Parsing entity <decrypt>.
+Parsing architecture <Behavioral> of entity <decrypt>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd" into library work
+Parsing entity <aes_encdec>.
+Parsing architecture <Behavioral> of entity <aes_encdec>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <aes_encdec> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <encrypt> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <sbox_shift> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <mixcolumns> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <decrypt> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <inv_mixcolumns> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <inv_sbox> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <key_scheduler> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <key_ram> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <key_expand> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <round_counter> (architecture <Behavioral>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <aes_encdec>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd".
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <aes_encdec> synthesized.
+
+Synthesizing Unit <encrypt>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\encrypt.vhd".
+    Found 128-bit register for signal <reg2>.
+    Found 128-bit register for signal <reg1>.
+    Found 128-bit register for signal <reg0>.
+    Summary:
+	inferred 384 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <encrypt> synthesized.
+
+Synthesizing Unit <sbox_shift>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\sbox.vhd".
+    Found 256x8-bit Read Only RAM for signal <q<127:120>>
+    Found 256x8-bit Read Only RAM for signal <q<119:112>>
+    Found 256x8-bit Read Only RAM for signal <q<111:104>>
+    Found 256x8-bit Read Only RAM for signal <q<103:96>>
+    Found 256x8-bit Read Only RAM for signal <q<95:88>>
+    Found 256x8-bit Read Only RAM for signal <q<87:80>>
+    Found 256x8-bit Read Only RAM for signal <q<79:72>>
+    Found 256x8-bit Read Only RAM for signal <q<71:64>>
+    Found 256x8-bit Read Only RAM for signal <q<63:56>>
+    Found 256x8-bit Read Only RAM for signal <q<55:48>>
+    Found 256x8-bit Read Only RAM for signal <q<47:40>>
+    Found 256x8-bit Read Only RAM for signal <q<39:32>>
+    Found 256x8-bit Read Only RAM for signal <q<31:24>>
+    Found 256x8-bit Read Only RAM for signal <q<23:16>>
+    Found 256x8-bit Read Only RAM for signal <q<15:8>>
+    Found 256x8-bit Read Only RAM for signal <q<7:0>>
+    Summary:
+	inferred  16 RAM(s).
+Unit <sbox_shift> synthesized.
+
+Synthesizing Unit <mixcolumns>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\mixcolumns.vhd".
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_7_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_7_o_wide_mux_1_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_7_o_wide_mux_5_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_7_o_wide_mux_6_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_7_o_wide_mux_10_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_7_o_wide_mux_11_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_7_o_wide_mux_15_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_7_o_wide_mux_16_OUT>
+    Summary:
+	inferred   8 RAM(s).
+Unit <mixcolumns> synthesized.
+
+Synthesizing Unit <decrypt>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\decrypt.vhd".
+    Found 128-bit register for signal <reg0>.
+    Found 128-bit register for signal <reg2>.
+    Found 128-bit register for signal <reg1>.
+    Summary:
+	inferred 384 D-type flip-flop(s).
+	inferred   2 Multiplexer(s).
+Unit <decrypt> synthesized.
+
+Synthesizing Unit <inv_mixcolumns>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\inv_mixcolumns.vhd".
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_1_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_3_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_9_o_wide_mux_5_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_7_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_8_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_10_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_9_o_wide_mux_12_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_14_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_15_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_17_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_9_o_wide_mux_19_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_21_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_22_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_24_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_9_o_wide_mux_26_OUT>
+    Summary:
+	inferred  16 RAM(s).
+Unit <inv_mixcolumns> synthesized.
+
+Synthesizing Unit <inv_sbox>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\inv_sbox.vhd".
+    Found 256x8-bit Read Only RAM for signal <q<127:120>>
+    Found 256x8-bit Read Only RAM for signal <q<119:112>>
+    Found 256x8-bit Read Only RAM for signal <q<111:104>>
+    Found 256x8-bit Read Only RAM for signal <q<103:96>>
+    Found 256x8-bit Read Only RAM for signal <q<95:88>>
+    Found 256x8-bit Read Only RAM for signal <q<87:80>>
+    Found 256x8-bit Read Only RAM for signal <q<79:72>>
+    Found 256x8-bit Read Only RAM for signal <q<71:64>>
+    Found 256x8-bit Read Only RAM for signal <q<63:56>>
+    Found 256x8-bit Read Only RAM for signal <q<55:48>>
+    Found 256x8-bit Read Only RAM for signal <q<47:40>>
+    Found 256x8-bit Read Only RAM for signal <q<39:32>>
+    Found 256x8-bit Read Only RAM for signal <q<31:24>>
+    Found 256x8-bit Read Only RAM for signal <q<23:16>>
+    Found 256x8-bit Read Only RAM for signal <q<15:8>>
+    Found 256x8-bit Read Only RAM for signal <q<7:0>>
+    Summary:
+	inferred  16 RAM(s).
+Unit <inv_sbox> synthesized.
+
+Synthesizing Unit <key_scheduler>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_scheduler.vhd".
+    Found 1-bit register for signal <keys_filled_s>.
+    Found 4-bit adder for signal <roundNumberInc> created at line 1241.
+    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_4_OUT<3:0>> created at line 1308.
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   1 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <key_scheduler> synthesized.
+
+Synthesizing Unit <key_ram>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_ram.vhd".
+WARNING:Xst:3035 - Index value(s) does not match array range for signal <keys>, simulation mismatch.
+    Found 11x128-bit dual-port RAM <Mram_keys> for signal <keys>.
+    Summary:
+	inferred   1 RAM(s).
+Unit <key_ram> synthesized.
+
+Synthesizing Unit <key_expand>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_expand.vhd".
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_13_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_13_o_wide_mux_3_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_13_o_wide_mux_4_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_13_o_wide_mux_5_OUT>
+    Summary:
+	inferred   4 RAM(s).
+Unit <key_expand> synthesized.
+
+Synthesizing Unit <round_counter>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\round_counter.vhd".
+    Found 4-bit register for signal <round>.
+    Found 2-bit register for signal <ctr>.
+    Found 4-bit adder for signal <round[3]_GND_14_o_add_3_OUT> created at line 1241.
+    Found 2-bit adder for signal <ctr[1]_GND_14_o_add_5_OUT> created at line 1241.
+    Found 4-bit comparator lessequal for signal <round[3]_PWR_15_o_LessThan_3_o> created at line 52
+    Summary:
+	inferred   2 Adder/Subtractor(s).
+	inferred   6 D-type flip-flop(s).
+	inferred   1 Comparator(s).
+Unit <round_counter> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 133
+ 11x128-bit dual-port RAM                              : 1
+ 256x8-bit single-port Read Only RAM                   : 132
+# Adders/Subtractors                                   : 4
+ 2-bit adder                                           : 1
+ 4-bit adder                                           : 2
+ 4-bit subtractor                                      : 1
+# Registers                                            : 9
+ 1-bit register                                        : 1
+ 128-bit register                                      : 6
+ 2-bit register                                        : 1
+ 4-bit register                                        : 1
+# Comparators                                          : 1
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 10
+ 128-bit 2-to-1 multiplexer                            : 8
+ 4-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 41
+ 128-bit xor2                                          : 4
+ 32-bit xor2                                           : 4
+ 8-bit xor2                                            : 1
+ 8-bit xor4                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+Synthesizing (advanced) Unit <inv_mixcolumns>.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_9_o_wide_mux_12_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_17_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_22_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_7_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_9_o_wide_mux_19_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_24_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_8_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_14_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_9_o_wide_mux_26_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_9_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_21_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <inv_mixcolumns> synthesized (advanced).
+
+Synthesizing (advanced) Unit <inv_sbox>.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<127:120>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<127:120>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<119:112>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<119:112>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<111:104>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<111:104>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<103:96>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<103:96>>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<95:88>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<95:88>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<87:80>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<87:80>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<79:72>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<79:72>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<71:64>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<71:64>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<63:56>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<63:56>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<55:48>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<55:48>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<47:40>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<47:40>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<39:32>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<39:32>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<31:24>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<23:16>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<15:8>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<7:0>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+Unit <inv_sbox> synthesized (advanced).
+
+Synthesizing (advanced) Unit <key_expand>.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_13_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_13_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_13_o_wide_mux_4_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_13_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <key_expand> synthesized (advanced).
+
+Synthesizing (advanced) Unit <key_ram>.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_keys> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 11-word x 128-bit                   |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <w>             | high     |
+    |     addrA          | connected to signal <w_addr>        |          |
+    |     diA            | connected to signal <w_key>         |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 11-word x 128-bit                   |          |
+    |     addrB          | connected to signal <r_addr>        |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <key_ram> synthesized (advanced).
+
+Synthesizing (advanced) Unit <mixcolumns>.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_7_o_wide_mux_6_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_7_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_7_o_wide_mux_11_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_7_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_7_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_7_o_wide_mux_16_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_7_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_7_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <mixcolumns> synthesized (advanced).
+
+Synthesizing (advanced) Unit <round_counter>.
+The following registers are absorbed into counter <ctr>: 1 register on signal <ctr>.
+The following registers are absorbed into counter <round>: 1 register on signal <round>.
+Unit <round_counter> synthesized (advanced).
+
+Synthesizing (advanced) Unit <sbox_shift>.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<127:120>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<127:120>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<119:112>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<87:80>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<111:104>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<47:40>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<103:96>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<7:0>>        |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<95:88>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<95:88>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<87:80>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<55:48>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<79:72>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<15:8>>       |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<71:64>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<103:96>>     |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<63:56>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<63:56>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<55:48>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<23:16>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<47:40>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<111:104>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<39:32>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<71:64>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<31:24>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<31:24>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<23:16>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<119:112>>    |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<15:8>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<79:72>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_q<7:0>>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 256-word x 8-bit                    |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <d<39:32>>      |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to signal <q>             |          |
+    -----------------------------------------------------------------------
+Unit <sbox_shift> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 133
+ 11x128-bit dual-port distributed RAM                  : 1
+ 256x8-bit single-port distributed Read Only RAM       : 132
+# Adders/Subtractors                                   : 2
+ 4-bit adder                                           : 1
+ 4-bit subtractor                                      : 1
+# Counters                                             : 2
+ 2-bit up counter                                      : 1
+ 4-bit up counter                                      : 1
+# Registers                                            : 769
+ Flip-Flops                                            : 769
+# Comparators                                          : 1
+ 4-bit comparator lessequal                            : 1
+# Multiplexers                                         : 391
+ 1-bit 2-to-1 multiplexer                              : 384
+ 128-bit 2-to-1 multiplexer                            : 5
+ 4-bit 2-to-1 multiplexer                              : 2
+# Xors                                                 : 41
+ 128-bit xor2                                          : 4
+ 32-bit xor2                                           : 4
+ 8-bit xor2                                            : 1
+ 8-bit xor4                                            : 32
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <aes_encdec> ...
+
+Optimizing unit <key_scheduler> ...
+
+Optimizing unit <key_expand> ...
+
+Optimizing unit <mixcolumns> ...
+
+Optimizing unit <inv_mixcolumns> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block aes_encdec, actual ratio is 31.
+FlipFlop roundCounter/round_0 has been replicated 2 time(s)
+FlipFlop roundCounter/round_1 has been replicated 1 time(s)
+FlipFlop roundCounter/round_2 has been replicated 1 time(s)
+FlipFlop roundCounter/round_3 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 780
+ Flip-Flops                                            : 780
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : aes_encdec.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 3526
+#      GND                         : 1
+#      INV                         : 2
+#      LUT2                        : 175
+#      LUT3                        : 249
+#      LUT4                        : 217
+#      LUT5                        : 234
+#      LUT6                        : 1784
+#      MUXF7                       : 576
+#      MUXF8                       : 288
+# FlipFlops/Latches                : 780
+#      FDE                         : 768
+#      FDR                         : 3
+#      FDRE                        : 9
+# RAMS                             : 23
+#      RAM16X1D                    : 2
+#      RAM32M                      : 21
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             780  out of  18224     4%  
+ Number of Slice LUTs:                 2749  out of   9112    30%  
+    Number used as Logic:              2661  out of   9112    29%  
+    Number used as Memory:               88  out of   2176     4%  
+       Number used as RAM:               88
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:   3007
+   Number with an unused Flip Flop:    2227  out of   3007    74%  
+   Number with an unused LUT:           258  out of   3007     8%  
+   Number of fully used LUT-FF pairs:   522  out of   3007    17%  
+   Number of unique control sets:         5
+
+IO Utilization: 
+ Number of IOs:                         389
+ Number of bonded IOBs:                   0  out of    232     0%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+-------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)   | Load  |
+-----------------------------------+-------------------------+-------+
+clk                                | NONE(encrypter/reg2_127)| 803   |
+-----------------------------------+-------------------------+-------+
+INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: 4.898ns (Maximum Frequency: 204.147MHz)
+   Minimum input arrival time before clock: 3.332ns
+   Maximum output required time after clock: 3.510ns
+   Maximum combinational path delay: 2.348ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 4.898ns (frequency: 204.147MHz)
+  Total number of paths / destination ports: 17547 / 1819
+-------------------------------------------------------------------------
+Delay:               4.898ns (Levels of Logic = 4)
+  Source:            keyScheduler/keyRAM/Mram_keys4 (RAM)
+  Destination:       keyScheduler/keyRAM/Mram_keys21 (RAM)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: keyScheduler/keyRAM/Mram_keys4 to keyScheduler/keyRAM/Mram_keys21
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     RAM32M:WCLK->DOB1    36   0.920   1.713  keyScheduler/keyRAM/Mram_keys4 (round_key<21>)
+     LUT6:I0->O            1   0.203   0.000  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT1 (keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT)
+     MUXF7:I1->O           1   0.140   0.000  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f7 (keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f7)
+     MUXF8:I1->O           4   0.152   0.684  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f8 (keyScheduler/keyExpand/d[23]_GND_13_o_wide_mux_0_OUT<0>)
+     LUT5:I4->O            1   0.205   0.579  keyScheduler/Mmux_w_key24 (keyScheduler/w_key<120>)
+     RAM32M:DIA0               0.303          keyScheduler/keyRAM/Mram_keys21
+    ----------------------------------------
+    Total                      4.898ns (1.923ns logic, 2.975ns route)
+                                       (39.3% logic, 60.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 2756 / 1286
+-------------------------------------------------------------------------
+Offset:              3.332ns (Levels of Logic = 3)
+  Source:            dec (PAD)
+  Destination:       keyScheduler/keyRAM/Mram_keys6 (RAM)
+  Destination Clock: clk rising
+
+  Data Path: dec to keyScheduler/keyRAM/Mram_keys6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT5:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    7   0.205   0.878  keyScheduler/keyRAM/Mram_keys221 (round_key<126>)
+     LUT6:I4->O            1   0.203   0.579  keyScheduler/Mmux_w_key521 (keyScheduler/w_key<30>)
+     RAM32M:DIA0               0.303          keyScheduler/keyRAM/Mram_keys6
+    ----------------------------------------
+    Total                      3.332ns (1.259ns logic, 2.073ns route)
+                                       (37.8% logic, 62.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 404 / 128
+-------------------------------------------------------------------------
+Offset:              3.510ns (Levels of Logic = 2)
+  Source:            roundCounter/round_0 (FF)
+  Destination:       q<127> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: roundCounter/round_0 to q<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDRE:C->Q           101   0.447   1.879  roundCounter/round_0 (roundCounter/round_0)
+     RAM16X1D:DPRA0->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys221 (round_key<126>)
+     LUT5:I4->O            0   0.205   0.000  Mmux_q301 (q<126>)
+    ----------------------------------------
+    Total                      3.510ns (0.857ns logic, 2.653ns route)
+                                       (24.4% logic, 75.6% route)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 262 / 128
+-------------------------------------------------------------------------
+Delay:               2.348ns (Levels of Logic = 3)
+  Source:            dec (PAD)
+  Destination:       q<127> (PAD)
+
+  Data Path: dec to q<127>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT5:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys222 (round_key<127>)
+     LUT5:I4->O            0   0.205   0.000  Mmux_q311 (q<127>)
+    ----------------------------------------
+    Total                      2.348ns (0.958ns logic, 1.390ns route)
+                                       (40.8% logic, 59.2% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    4.898|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 20.69 secs
+ 
+--> 
+
+Total memory usage is 284316 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :   62 (   0 filtered)
+
