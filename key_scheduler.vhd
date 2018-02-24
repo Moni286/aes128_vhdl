@@ -57,6 +57,9 @@ COMPONENT key_ram is
            r_key : out  STD_LOGIC_VECTOR (127 downto 0));
 END COMPONENT key_ram;
 
+type decRound_t is array (0 to 10) of STD_LOGIC_VECTOR(3 downto 0);
+constant decRound : decRound_t := (x"a", x"9", x"8", x"7", x"6", x"5", x"4", x"3", x"2", x"1",x"0");
+
 signal w_s : STD_LOGIC;	
 
 signal w_addr : STD_LOGIC_VECTOR(3 downto 0);
@@ -70,6 +73,7 @@ signal curr_key : STD_LOGIC_VECTOR(127 downto 0);
 signal keys_filled_s : STD_LOGIC := '0';
 
 signal roundNumberInc : STD_LOGIC_VECTOR(3 downto 0);
+signal decRoundNumber : STD_LOGIC_VECTOR(3 downto 0);
 
 begin
 	
@@ -80,10 +84,12 @@ begin
 	keys_filled <= keys_filled_s;
 	
 	roundNumberInc <= STD_LOGIC_VECTOR(unsigned(round_number) + 1);
+	decRoundNumber <= STD_LOGIC_VECTOR(unsigned(NOT round_number) - 5);
+	--decRoundNumber <= decRound(to_integer(unsigned(round_number)));
 	
-	with dec select r_addr <= 
+	with (dec AND keys_filled_s) select r_addr <= 
 		round_number when '0',
-		STD_LOGIC_VECTOR(unsigned(NOT round_number) - 5) when others;
+		decRoundNumber when others;
 	
 	with w select w_key <= 
 		original_key when '1',
@@ -107,7 +113,6 @@ begin
 			end if;
 		end if;
 	END PROCESS;
-	
 	
 	
 end Behavioral;

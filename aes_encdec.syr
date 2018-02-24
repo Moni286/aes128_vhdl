@@ -164,6 +164,7 @@ Elaborating entity <key_ram> (architecture <Behavioral>) from library <work>.
 Elaborating entity <key_expand> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <round_counter> (architecture <Behavioral>) from library <work>.
+WARNING:HDLCompiler:1127 - "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd" Line 131: Assignment to clk_rst ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -211,14 +212,14 @@ Unit <sbox_shift> synthesized.
 
 Synthesizing Unit <mixcolumns>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\mixcolumns.vhd".
-    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_7_o_wide_mux_0_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_GND_7_o_wide_mux_1_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_7_o_wide_mux_5_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_GND_7_o_wide_mux_6_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_7_o_wide_mux_10_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_GND_7_o_wide_mux_11_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_7_o_wide_mux_15_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[31]_GND_7_o_wide_mux_16_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_8_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_8_o_wide_mux_1_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_8_o_wide_mux_5_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_8_o_wide_mux_6_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_8_o_wide_mux_10_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_8_o_wide_mux_11_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_8_o_wide_mux_15_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_8_o_wide_mux_16_OUT>
     Summary:
 	inferred   8 RAM(s).
 Unit <mixcolumns> synthesized.
@@ -235,22 +236,22 @@ Unit <decrypt> synthesized.
 
 Synthesizing Unit <inv_mixcolumns>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\inv_mixcolumns.vhd".
-    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_0_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_1_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_3_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_GND_9_o_wide_mux_5_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_7_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_8_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_10_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[31]_GND_9_o_wide_mux_12_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_9_o_wide_mux_14_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_15_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_17_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_GND_9_o_wide_mux_19_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_9_o_wide_mux_21_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_9_o_wide_mux_22_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_9_o_wide_mux_24_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_GND_9_o_wide_mux_26_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_10_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_10_o_wide_mux_1_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_10_o_wide_mux_3_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_10_o_wide_mux_5_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_10_o_wide_mux_7_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_10_o_wide_mux_8_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_10_o_wide_mux_10_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_10_o_wide_mux_12_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_PWR_10_o_wide_mux_14_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_10_o_wide_mux_15_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_10_o_wide_mux_17_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_10_o_wide_mux_19_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_PWR_10_o_wide_mux_21_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_PWR_10_o_wide_mux_22_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_PWR_10_o_wide_mux_24_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_10_o_wide_mux_26_OUT>
     Summary:
 	inferred  16 RAM(s).
 Unit <inv_mixcolumns> synthesized.
@@ -281,7 +282,7 @@ Synthesizing Unit <key_scheduler>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_scheduler.vhd".
     Found 1-bit register for signal <keys_filled_s>.
     Found 4-bit adder for signal <roundNumberInc> created at line 1241.
-    Found 4-bit subtractor for signal <GND_11_o_GND_11_o_sub_4_OUT<3:0>> created at line 1308.
+    Found 4-bit subtractor for signal <decRoundNumber> created at line 76.
     Summary:
 	inferred   2 Adder/Subtractor(s).
 	inferred   1 D-type flip-flop(s).
@@ -290,18 +291,17 @@ Unit <key_scheduler> synthesized.
 
 Synthesizing Unit <key_ram>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_ram.vhd".
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <keys>, simulation mismatch.
-    Found 11x128-bit dual-port RAM <Mram_keys> for signal <keys>.
+    Found 16x128-bit dual-port RAM <Mram_keys> for signal <keys>.
     Summary:
 	inferred   1 RAM(s).
 Unit <key_ram> synthesized.
 
 Synthesizing Unit <key_expand>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\key_expand.vhd".
-    Found 256x8-bit Read Only RAM for signal <d[23]_GND_13_o_wide_mux_0_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[15]_GND_13_o_wide_mux_3_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[7]_GND_13_o_wide_mux_4_OUT>
-    Found 256x8-bit Read Only RAM for signal <d[31]_GND_13_o_wide_mux_5_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[23]_GND_14_o_wide_mux_0_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[15]_GND_14_o_wide_mux_3_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[7]_GND_14_o_wide_mux_4_OUT>
+    Found 256x8-bit Read Only RAM for signal <d[31]_GND_14_o_wide_mux_5_OUT>
     Summary:
 	inferred   4 RAM(s).
 Unit <key_expand> synthesized.
@@ -309,13 +309,11 @@ Unit <key_expand> synthesized.
 Synthesizing Unit <round_counter>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\round_counter.vhd".
     Found 4-bit register for signal <round>.
-    Found 2-bit register for signal <ctr>.
-    Found 4-bit adder for signal <round[3]_GND_14_o_add_3_OUT> created at line 1241.
-    Found 2-bit adder for signal <ctr[1]_GND_14_o_add_5_OUT> created at line 1241.
-    Found 4-bit comparator lessequal for signal <round[3]_PWR_15_o_LessThan_3_o> created at line 52
+    Found 4-bit adder for signal <round[3]_GND_15_o_add_2_OUT> created at line 1241.
+    Found 4-bit comparator greater for signal <round[3]_PWR_16_o_LessThan_2_o> created at line 72
     Summary:
-	inferred   2 Adder/Subtractor(s).
-	inferred   6 D-type flip-flop(s).
+	inferred   1 Adder/Subtractor(s).
+	inferred   4 D-type flip-flop(s).
 	inferred   1 Comparator(s).
 Unit <round_counter> synthesized.
 
@@ -324,19 +322,17 @@ HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 133
- 11x128-bit dual-port RAM                              : 1
+ 16x128-bit dual-port RAM                              : 1
  256x8-bit single-port Read Only RAM                   : 132
-# Adders/Subtractors                                   : 4
- 2-bit adder                                           : 1
+# Adders/Subtractors                                   : 3
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 10
+# Registers                                            : 9
  1-bit register                                        : 2
  128-bit register                                      : 6
- 2-bit register                                        : 1
  4-bit register                                        : 1
 # Comparators                                          : 1
- 4-bit comparator lessequal                            : 1
+ 4-bit comparator greater                              : 1
 # Multiplexers                                         : 10
  128-bit 2-to-1 multiplexer                            : 8
  4-bit 2-to-1 multiplexer                              : 2
@@ -354,7 +350,7 @@ Macro Statistics
 
 
 Synthesizing (advanced) Unit <inv_mixcolumns>.
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_10_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -365,7 +361,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_9_o_wide_mux_12_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_10_o_wide_mux_12_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -376,7 +372,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_17_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_10_o_wide_mux_17_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -387,7 +383,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_9_o_wide_mux_22_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_10_o_wide_mux_22_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -398,7 +394,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_10_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -409,7 +405,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_7_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_10_o_wide_mux_7_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -420,7 +416,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_9_o_wide_mux_19_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_10_o_wide_mux_19_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -431,7 +427,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_9_o_wide_mux_24_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_10_o_wide_mux_24_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -442,7 +438,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_10_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -453,7 +449,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_8_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_10_o_wide_mux_8_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -464,7 +460,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_9_o_wide_mux_14_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_10_o_wide_mux_14_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -475,7 +471,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_9_o_wide_mux_26_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_10_o_wide_mux_26_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -486,7 +482,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_9_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_10_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -497,7 +493,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_10_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -508,7 +504,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_10_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -519,7 +515,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_9_o_wide_mux_21_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_10_o_wide_mux_21_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -712,7 +708,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
 Unit <inv_sbox> synthesized (advanced).
 
 Synthesizing (advanced) Unit <key_expand>.
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_13_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_14_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -723,7 +719,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_13_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_14_o_wide_mux_3_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -734,7 +730,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_13_o_wide_mux_4_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_14_o_wide_mux_4_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -745,7 +741,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_13_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_14_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -764,21 +760,21 @@ INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_keys> will be implemented on LUTs ei
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
-    |     aspect ratio   | 11-word x 128-bit                   |          |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
     |     clkA           | connected to signal <clk>           | rise     |
     |     weA            | connected to signal <w>             | high     |
     |     addrA          | connected to signal <w_addr>        |          |
     |     diA            | connected to signal <w_key>         |          |
     -----------------------------------------------------------------------
     | Port B                                                              |
-    |     aspect ratio   | 11-word x 128-bit                   |          |
+    |     aspect ratio   | 16-word x 128-bit                   |          |
     |     addrB          | connected to signal <r_addr>        |          |
     |     doB            | connected to internal node          |          |
     -----------------------------------------------------------------------
 Unit <key_ram> synthesized (advanced).
 
 Synthesizing (advanced) Unit <mixcolumns>.
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_7_o_wide_mux_6_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_GND_8_o_wide_mux_6_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -789,7 +785,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_7_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[15]_PWR_8_o_wide_mux_10_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -800,7 +796,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_7_o_wide_mux_11_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_GND_8_o_wide_mux_11_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -811,7 +807,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_7_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[7]_PWR_8_o_wide_mux_15_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -822,7 +818,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_7_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_8_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -833,7 +829,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_7_o_wide_mux_16_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_GND_8_o_wide_mux_16_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -844,7 +840,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_7_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_GND_8_o_wide_mux_1_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -855,7 +851,7 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
-INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_7_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
+INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[23]_PWR_8_o_wide_mux_5_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
@@ -869,7 +865,6 @@ INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the R
 Unit <mixcolumns> synthesized (advanced).
 
 Synthesizing (advanced) Unit <round_counter>.
-The following registers are absorbed into counter <ctr>: 1 register on signal <ctr>.
 The following registers are absorbed into counter <round>: 1 register on signal <round>.
 Unit <round_counter> synthesized (advanced).
 
@@ -1057,18 +1052,17 @@ Advanced HDL Synthesis Report
 
 Macro Statistics
 # RAMs                                                 : 133
- 11x128-bit dual-port distributed RAM                  : 1
+ 16x128-bit dual-port distributed RAM                  : 1
  256x8-bit single-port distributed Read Only RAM       : 132
 # Adders/Subtractors                                   : 2
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
-# Counters                                             : 2
- 2-bit up counter                                      : 1
+# Counters                                             : 1
  4-bit up counter                                      : 1
 # Registers                                            : 770
  Flip-Flops                                            : 770
 # Comparators                                          : 1
- 4-bit comparator lessequal                            : 1
+ 4-bit comparator greater                              : 1
 # Multiplexers                                         : 391
  1-bit 2-to-1 multiplexer                              : 384
  128-bit 2-to-1 multiplexer                            : 5
@@ -1098,10 +1092,11 @@ Optimizing unit <inv_mixcolumns> ...
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block aes_encdec, actual ratio is 31.
-FlipFlop roundCounter/round_0 has been replicated 2 time(s)
-FlipFlop roundCounter/round_1 has been replicated 1 time(s)
-FlipFlop roundCounter/round_2 has been replicated 1 time(s)
-FlipFlop roundCounter/round_3 has been replicated 1 time(s)
+FlipFlop keyScheduler/keys_filled_s has been replicated 3 time(s)
+FlipFlop roundCounter/round_0 has been replicated 6 time(s)
+FlipFlop roundCounter/round_1 has been replicated 3 time(s)
+FlipFlop roundCounter/round_2 has been replicated 5 time(s)
+FlipFlop roundCounter/round_3 has been replicated 4 time(s)
 
 Final Macro Processing ...
 
@@ -1109,8 +1104,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 781
- Flip-Flops                                            : 781
+# Registers                                            : 795
+ Flip-Flops                                            : 795
 
 =========================================================================
 
@@ -1133,24 +1128,27 @@ Top Level Output File Name         : aes_encdec.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3526
+# BELS                             : 3968
 #      GND                         : 1
-#      INV                         : 2
-#      LUT2                        : 175
-#      LUT3                        : 249
-#      LUT4                        : 217
-#      LUT5                        : 234
-#      LUT6                        : 1784
+#      INV                         : 1
+#      LUT2                        : 171
+#      LUT3                        : 256
+#      LUT4                        : 677
+#      LUT5                        : 233
+#      LUT6                        : 1765
 #      MUXF7                       : 576
 #      MUXF8                       : 288
-# FlipFlops/Latches                : 781
+# FlipFlops/Latches                : 795
 #      FD                          : 1
 #      FDE                         : 768
-#      FDR                         : 3
-#      FDRE                        : 9
+#      FDR                         : 26
 # RAMS                             : 23
 #      RAM16X1D                    : 2
 #      RAM32M                      : 21
+# Clock Buffers                    : 1
+#      BUFG                        : 1
+# DCMs                             : 1
+#      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -1159,24 +1157,25 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             781  out of  18224     4%  
- Number of Slice LUTs:                 2749  out of   9112    30%  
-    Number used as Logic:              2661  out of   9112    29%  
+ Number of Slice Registers:             795  out of  18224     4%  
+ Number of Slice LUTs:                 3191  out of   9112    35%  
+    Number used as Logic:              3103  out of   9112    34%  
     Number used as Memory:               88  out of   2176     4%  
        Number used as RAM:               88
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3007
-   Number with an unused Flip Flop:    2226  out of   3007    74%  
-   Number with an unused LUT:           258  out of   3007     8%  
-   Number of fully used LUT-FF pairs:   523  out of   3007    17%  
-   Number of unique control sets:         6
+ Number of LUT Flip Flop pairs used:   3204
+   Number with an unused Flip Flop:    2409  out of   3204    75%  
+   Number with an unused LUT:            13  out of   3204     0%  
+   Number of fully used LUT-FF pairs:   782  out of   3204    24%  
+   Number of unique control sets:        16
 
 IO Utilization: 
- Number of IOs:                         393
+ Number of IOs:                         522
  Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
 
 ---------------------------
 Partition Resource Summary:
@@ -1199,7 +1198,8 @@ Clock Information:
 -----------------------------------+------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)  | Load  |
 -----------------------------------+------------------------+-------+
-clk                                | NONE(done)             | 804   |
+clk                                | NONE(done)             | 50    |
+clk                                | DCM_SP:CLKFX           | 768   |
 -----------------------------------+------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
@@ -1211,10 +1211,10 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 4.898ns (Maximum Frequency: 204.147MHz)
-   Minimum input arrival time before clock: 3.332ns
-   Maximum output required time after clock: 3.510ns
-   Maximum combinational path delay: 2.348ns
+   Minimum period: 12.606ns (Maximum Frequency: 79.328MHz)
+   Minimum input arrival time before clock: 4.409ns
+   Maximum output required time after clock: 3.315ns
+   Maximum combinational path delay: 2.309ns
 
 Timing Details:
 ---------------
@@ -1222,34 +1222,34 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 4.898ns (frequency: 204.147MHz)
-  Total number of paths / destination ports: 17551 / 1820
+  Clock period: 12.606ns (frequency: 79.328MHz)
+  Total number of paths / destination ports: 18043 / 1836
 -------------------------------------------------------------------------
-Delay:               4.898ns (Levels of Logic = 4)
-  Source:            keyScheduler/keyRAM/Mram_keys4 (RAM)
-  Destination:       keyScheduler/keyRAM/Mram_keys21 (RAM)
+Delay:               4.202ns (Levels of Logic = 4)
+  Source:            roundCounter/round_3_1 (FF)
+  Destination:       encrypter/reg0_127 (FF)
   Source Clock:      clk rising
-  Destination Clock: clk rising
+  Destination Clock: clk rising 3.0X
 
-  Data Path: keyScheduler/keyRAM/Mram_keys4 to keyScheduler/keyRAM/Mram_keys21
+  Data Path: roundCounter/round_3_1 to encrypter/reg0_127
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAM32M:WCLK->DOB1    36   0.920   1.713  keyScheduler/keyRAM/Mram_keys4 (round_key<21>)
-     LUT6:I0->O            1   0.203   0.000  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT1 (keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT)
-     MUXF7:I1->O           1   0.140   0.000  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f7 (keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f7)
-     MUXF8:I1->O           4   0.152   0.684  keyScheduler/keyExpand_Mram_d[23]_GND_13_o_wide_mux_0_OUT_f8 (keyScheduler/keyExpand/d[23]_GND_13_o_wide_mux_0_OUT<0>)
-     LUT5:I4->O            1   0.205   0.579  keyScheduler/Mmux_w_key24 (keyScheduler/w_key<120>)
-     RAM32M:DIA0               0.303          keyScheduler/keyRAM/Mram_keys21
+     FDR:C->Q              1   0.447   0.924  roundCounter/round_3_1 (roundCounter/round_3_1)
+     LUT6:I1->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
+     LUT6:I5->O            1   0.205   0.580  decrypter/Mxor_from_addrkey_126_xo<0>1 (decrypter/from_addrkey<126>)
+     LUT4:I3->O            1   0.205   0.000  decrypter/reg0_126_dpot (decrypter/reg0_126_dpot)
+     FDE:D                     0.102          decrypter/reg0_126
     ----------------------------------------
-    Total                      4.898ns (1.923ns logic, 2.975ns route)
-                                       (39.3% logic, 60.7% route)
+    Total                      4.202ns (1.367ns logic, 2.835ns route)
+                                       (32.5% logic, 67.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2756 / 1286
+  Total number of paths / destination ports: 2774 / 1271
 -------------------------------------------------------------------------
-Offset:              3.332ns (Levels of Logic = 3)
+Offset:              4.409ns (Levels of Logic = 4)
   Source:            dec (PAD)
   Destination:       keyScheduler/keyRAM/Mram_keys6 (RAM)
   Destination Clock: clk rising
@@ -1258,39 +1258,41 @@ Offset:              3.332ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT5:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    7   0.205   0.878  keyScheduler/keyRAM/Mram_keys221 (round_key<126>)
-     LUT6:I4->O            1   0.203   0.579  keyScheduler/Mmux_w_key521 (keyScheduler/w_key<30>)
+     LUT6:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    5   0.205   1.079  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
+     LUT6:I0->O            3   0.203   0.651  keyScheduler/keyExpand/next_key_1<30>11 (keyScheduler/keyExpand/next_key_1<30>_bdd0)
+     LUT6:I5->O            1   0.205   0.579  keyScheduler/Mmux_w_key521 (keyScheduler/w_key<30>)
      RAM32M:DIA0               0.303          keyScheduler/keyRAM/Mram_keys6
     ----------------------------------------
-    Total                      3.332ns (1.259ns logic, 2.073ns route)
-                                       (37.8% logic, 62.2% route)
+    Total                      4.409ns (1.484ns logic, 2.925ns route)
+                                       (33.7% logic, 66.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 409 / 133
+  Total number of paths / destination ports: 570 / 262
 -------------------------------------------------------------------------
-Offset:              3.510ns (Levels of Logic = 2)
-  Source:            roundCounter/round_0 (FF)
+Offset:              3.315ns (Levels of Logic = 3)
+  Source:            roundCounter/round_3_1 (FF)
   Destination:       q<127> (PAD)
   Source Clock:      clk rising
 
-  Data Path: roundCounter/round_0 to q<127>
+  Data Path: roundCounter/round_3_1 to q<127>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDRE:C->Q           101   0.447   1.879  roundCounter/round_0 (roundCounter/round_0)
-     RAM16X1D:DPRA0->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys221 (round_key<126>)
+     FDR:C->Q              1   0.447   0.924  roundCounter/round_3_1 (roundCounter/round_3_1)
+     LUT6:I1->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
      LUT5:I4->O            0   0.205   0.000  Mmux_q301 (q<126>)
     ----------------------------------------
-    Total                      3.510ns (0.857ns logic, 2.653ns route)
-                                       (24.4% logic, 75.6% route)
+    Total                      3.315ns (1.060ns logic, 2.255ns route)
+                                       (32.0% logic, 68.0% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 262 / 128
+  Total number of paths / destination ports: 268 / 130
 -------------------------------------------------------------------------
-Delay:               2.348ns (Levels of Logic = 3)
+Delay:               2.309ns (Levels of Logic = 3)
   Source:            dec (PAD)
   Destination:       q<127> (PAD)
 
@@ -1298,12 +1300,12 @@ Delay:               2.348ns (Levels of Logic = 3)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT5:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys222 (round_key<127>)
-     LUT5:I4->O            0   0.205   0.000  Mmux_q311 (q<127>)
+     LUT6:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
+     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
+     LUT5:I4->O            0   0.205   0.000  Mmux_q301 (q<126>)
     ----------------------------------------
-    Total                      2.348ns (0.958ns logic, 1.390ns route)
-                                       (40.8% logic, 59.2% route)
+    Total                      2.309ns (0.978ns logic, 1.331ns route)
+                                       (42.4% logic, 57.6% route)
 
 =========================================================================
 
@@ -1315,18 +1317,18 @@ Clock to Setup on destination clock clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-clk            |    4.898|         |         |         |
+clk            |    6.030|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.74 secs
+Total CPU time to Xst completion: 20.86 secs
  
 --> 
 
-Total memory usage is 280284 kilobytes
+Total memory usage is 293404 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    1 (   0 filtered)

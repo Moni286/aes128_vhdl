@@ -40,8 +40,8 @@ end key_ram;
 
 architecture Behavioral of key_ram is
 
-type keys_t is array (0 to 10) of STD_LOGIC_VECTOR(127 downto 0);
-	signal keys : keys_t;
+type keys_t is array (0 to 15) of STD_LOGIC_VECTOR(127 downto 0);
+	signal keys : keys_t := (others => x"00000000000000000000000000000000");
 
 begin
 

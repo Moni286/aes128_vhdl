@@ -41,9 +41,9 @@ ARCHITECTURE behavior OF clock_divider_tb IS
  
     COMPONENT clock_divider
     PORT(
-         clk : IN  std_logic;
-			rst : IN std_logic;
-         clk_div : OUT  std_logic
+         clk_in : IN  std_logic;
+			reset : IN std_logic;
+         clk_out : OUT  std_logic
         );
     END COMPONENT;
     
@@ -57,15 +57,14 @@ ARCHITECTURE behavior OF clock_divider_tb IS
 
    -- Clock period definitions
    constant clk_period : time := 10 ns;
-   constant clk_div_period : time := 10 ns;
  
 BEGIN
  
 	-- Instantiate the Unit Under Test (UUT)
    uut: clock_divider PORT MAP (
-          clk => clk,
-          clk_div => clk_div,
-			 rst => rst
+          clk_in => clk,
+          clk_out => clk_div,
+			 reset => rst
         );
 
    -- Clock process definitions
@@ -75,14 +74,6 @@ BEGIN
 		wait for clk_period/2;
 		clk <= '1';
 		wait for clk_period/2;
-   end process;
- 
-   clk_div_process :process
-   begin
-		clk_div <= '0';
-		wait for clk_div_period/2;
-		clk_div <= '1';
-		wait for clk_div_period/2;
    end process;
  
 
