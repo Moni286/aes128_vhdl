@@ -4,7 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 D:\Programs\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v
 3 -s 3 -n 3 -fastpaths -xml aes_encdec.twx aes_encdec.ncd -o aes_encdec.twr
-aes_encdec.pcf
+aes_encdec.pcf -ucf aes_encdec.ucf
 
 Design file:              aes_encdec.ncd
 Physical constraint file: aes_encdec.pcf
@@ -16,7 +16,6 @@ Environment Variable      Effect
 NONE                      No environment variables were set
 --------------------------------------------------------------------------------
 
-INFO:Timing:2698 - No timing constraints found, doing default enumeration.
 INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
 INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
    option. All paths that are not constrained will be reported in the 
@@ -25,7 +24,993 @@ INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on
    a 50 Ohm transmission line loading model.  For the details of this model, 
    and for more information on accounting for different loading conditions, 
    please see the device datasheet.
+117 logic loops found and disabled.
 
+  ----------------------------------------------------------------------
+ ! Warning: The following connections close logic loops, and some paths !
+ !          through these connections may not be analyzed. To better    !
+ !          understand the logic associated with these loops, run a     !
+ !          Analyze Against User-Defined End-Point Analysis inside      !
+ !          Timing Analyzer (timingan) with the listed signal as a      !
+ !          source NET (*signal_name). The Timing Report will display   !
+ !          all the paths associated with this signal and the logic     !
+ !          loop will be reported.                                      !
+ !                                                                      !
+ ! Signal                            Driver            Load             !
+ ! --------------------------------  ----------------  ---------------- !
+ ! /count[31]_GND_16_o_add_0_OUT<0>  SLICE_X28Y48.AQ   SLICE_X28Y48.A2  !
+ ! count[31]_GND_16_o_add_0_OUT<24>  LICE_X28Y54.AMUX  SLICE_X28Y54.A1  !
+ ! count[31]_GND_16_o_add_0_OUT<25>  LICE_X28Y54.BMUX  SLICE_X28Y54.B1  !
+ ! count[31]_GND_16_o_add_0_OUT<26>  LICE_X28Y54.CMUX  SLICE_X28Y54.C1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X24Y52.B4  !
+ ! nt[31]_GND_16_o_add_0_OUT_cy<23>  LICE_X28Y53.COUT  SLICE_X28Y54.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y54.A5  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y54.B4  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y54.C5  !
+ ! count[31]_GND_16_o_add_0_OUT<27>  LICE_X28Y54.DMUX  SLICE_X28Y54.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y54.D3  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X29Y53.A5  !
+ ! count[31]_GND_16_o_add_0_OUT<28>  LICE_X28Y55.AMUX  SLICE_X28Y55.A1  !
+ ! count[31]_GND_16_o_add_0_OUT<29>  LICE_X28Y55.BMUX  SLICE_X28Y55.B1  !
+ ! count[31]_GND_16_o_add_0_OUT<20>  LICE_X28Y53.AMUX  SLICE_X28Y53.A1  !
+ ! count[31]_GND_16_o_add_0_OUT<21>  LICE_X28Y53.BMUX  SLICE_X28Y53.B1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X27Y53.A2  !
+ ! count[31]_GND_16_o_add_0_OUT<22>  LICE_X28Y53.CMUX  SLICE_X28Y53.C1  !
+ ! nt[31]_GND_16_o_add_0_OUT_cy<19>  LICE_X28Y52.COUT  SLICE_X28Y53.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y53.A2  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y53.B5  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y53.C4  !
+ ! count[31]_GND_16_o_add_0_OUT<23>  LICE_X28Y53.DMUX  SLICE_X28Y53.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y53.D4  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X29Y53.B2  !
+ ! count[31]_GND_16_o_add_0_OUT<16>  LICE_X28Y52.AMUX  SLICE_X28Y52.A1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X27Y52.B2  !
+ ! count[31]_GND_16_o_add_0_OUT<17>  LICE_X28Y52.BMUX  SLICE_X28Y52.B1  !
+ ! count[31]_GND_16_o_add_0_OUT<18>  LICE_X28Y52.CMUX  SLICE_X28Y52.C1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X24Y52.D3  !
+ ! nt[31]_GND_16_o_add_0_OUT_cy<15>  LICE_X28Y51.COUT  SLICE_X28Y52.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y52.A5  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y52.B2  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y52.C3  !
+ ! count[31]_GND_16_o_add_0_OUT<19>  LICE_X28Y52.DMUX  SLICE_X28Y52.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y52.D5  !
+ ! /count[31]_GND_16_o_add_0_OUT<8>  LICE_X28Y50.AMUX  SLICE_X28Y50.A1  !
+ ! /count[31]_GND_16_o_add_0_OUT<9>  LICE_X28Y50.BMUX  SLICE_X28Y50.B1  !
+ ! unt[31]_GND_16_o_add_0_OUT_cy<7>  LICE_X28Y49.COUT  SLICE_X28Y50.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y50.A5  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y50.B4  !
+ ! count[31]_GND_16_o_add_0_OUT<10>  LICE_X28Y50.CMUX  SLICE_X28Y50.C1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y50.C4  !
+ ! count[31]_GND_16_o_add_0_OUT<11>  LICE_X28Y50.DMUX  SLICE_X28Y50.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y50.D5  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X26Y52.B1  !
+ ! count[31]_GND_16_o_add_0_OUT<12>  LICE_X28Y51.AMUX  SLICE_X28Y51.A1  !
+ ! count[31]_GND_16_o_add_0_OUT<13>  LICE_X28Y51.BMUX  SLICE_X28Y51.B1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X26Y52.A1  !
+ ! count[31]_GND_16_o_add_0_OUT<14>  LICE_X28Y51.CMUX  SLICE_X28Y51.C1  !
+ ! /count[31]_GND_16_o_add_0_OUT<4>  LICE_X28Y49.AMUX  SLICE_X28Y49.A1  !
+ ! /count[31]_GND_16_o_add_0_OUT<5>  LICE_X28Y49.BMUX  SLICE_X28Y49.B1  !
+ ! /count[31]_GND_16_o_add_0_OUT<6>  LICE_X28Y49.CMUX  SLICE_X28Y49.C1  !
+ ! unt[31]_GND_16_o_add_0_OUT_cy<3>  LICE_X28Y48.COUT  SLICE_X28Y49.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y49.A4  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y49.B4  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y49.C5  !
+ ! /count[31]_GND_16_o_add_0_OUT<7>  LICE_X28Y49.DMUX  SLICE_X28Y49.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y49.D5  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X24Y53.B4  !
+ ! /count[31]_GND_16_o_add_0_OUT<2>  LICE_X28Y48.CMUX  SLICE_X28Y48.C1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X29Y48.A2  !
+ ! /count[31]_GND_16_o_add_0_OUT<1>  LICE_X28Y48.BMUX  SLICE_X28Y48.B1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y48.B4  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y48.C5  !
+ ! /count[31]_GND_16_o_add_0_OUT<3>  LICE_X28Y48.DMUX  SLICE_X28Y48.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y48.D2  !
+ ! /count[31]_GND_16_o_add_0_OUT<1>  LICE_X28Y48.BMUX  SLICE_X28Y48.A3  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X28Y48.A4  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X29Y48.C4  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X24Y53.D5  !
+ ! nt[31]_GND_16_o_add_0_OUT_cy<11>  LICE_X28Y50.COUT  SLICE_X28Y51.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y51.A5  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y51.B3  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y51.C2  !
+ ! count[31]_GND_16_o_add_0_OUT<15>  LICE_X28Y51.DMUX  SLICE_X28Y51.D1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y51.D2  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X27Y52.A1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X24Y53.C1  !
+ ! der/GND_16_o_count[31]_equal_2_o  SLICE_X24Y52.A    SLICE_X27Y54.A5  !
+ ! nt[31]_GND_16_o_add_0_OUT_cy<27>  LICE_X28Y54.COUT  SLICE_X28Y55.CIN !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y55.A2  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y55.B2  !
+ ! count[31]_GND_16_o_add_0_OUT<30>  LICE_X28Y55.CMUX  SLICE_X28Y55.C1  !
+ ! ND_16_o_count[31]_equal_2_o<31>5  SLICE_X26Y53.C    SLICE_X28Y55.C3  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y48.B5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y48.C3  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y48.D4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y49.A3  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y49.B5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y49.C4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y49.D2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y50.A4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y50.B3  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y50.C5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y50.D2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y51.A2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y51.B5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y51.C4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y51.D4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y52.A2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y52.B5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y52.C4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y52.D4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y53.A5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y53.B2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y53.C2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y53.D2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y54.A2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y54.B2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y54.C2  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y54.D4  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y55.A5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y55.B5  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y55.C4  !
+ ! count[31]_GND_16_o_add_0_OUT<31>  LICE_X28Y55.DMUX  SLICE_X28Y55.D1  !
+ ! clockDivider/count<31>            SLICE_X24Y52.B    SLICE_X28Y55.D3  !
+  ---------------------------------------------------------------------- 
+
+
+================================================================================
+Timing constraint: TS_clk = PERIOD TIMEGRP "clk" 2.857 ns HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 15691 paths analyzed, 9992 endpoints analyzed, 1788 failing endpoints
+ 1788 timing errors detected. (1788 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   3.881ns.
+--------------------------------------------------------------------------------
+
+Paths for end point decrypter/reg1_9 (SLICE_X15Y22.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.024ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          decrypter/reg1_9 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      3.846ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to decrypter/reg1_9
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X20Y39.D3      net (fanout=15)       1.006   keyScheduler/keys_filled_s
+    SLICE_X20Y39.D       Tilo                  0.205   decrypter/reg1<90>
+                                                       decEn1
+    SLICE_X15Y22.CE      net (fanout=242)      1.920   decEn
+    SLICE_X15Y22.CLK     Tceck                 0.324   decrypter/reg1<9>
+                                                       decrypter/reg1_9
+    -------------------------------------------------  ---------------------------
+    Total                                      3.846ns (0.920ns logic, 2.926ns route)
+                                                       (23.9% logic, 76.1% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point decrypter/reg0_111 (SLICE_X7Y45.D6), 14 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.015ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_1_1 (FF)
+  Destination:          decrypter/reg0_111 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      3.837ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_1_1 to decrypter/reg0_111
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y37.AMUX    Tshcko                0.461   roundCounter/round<3>
+                                                       roundCounter/round_1_1
+    SLICE_X15Y39.D6      net (fanout=12)       0.553   roundCounter/round_1_1
+    SLICE_X15Y39.D       Tilo                  0.259   keyScheduler/r_addr<1>
+                                                       keyScheduler/r_addr<1>1
+    SLICE_X10Y40.B3      net (fanout=47)       1.046   keyScheduler/r_addr<1>
+    SLICE_X10Y40.B       Tilo                  0.203   roundKey<111>
+                                                       keyScheduler/keyRAM/Mram_keys112/DP
+    SLICE_X7Y45.D6       net (fanout=7)        0.993   roundKey<111>
+    SLICE_X7Y45.CLK      Tas                   0.322   decrypter/reg0<111>
+                                                       decrypter/Mxor_from_addrkey_111_xo<0>1
+                                                       decrypter/reg0_111
+    -------------------------------------------------  ---------------------------
+    Total                                      3.837ns (1.245ns logic, 2.592ns route)
+                                                       (32.4% logic, 67.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.920ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_0_1 (FF)
+  Destination:          decrypter/reg0_111 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      3.742ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_0_1 to decrypter/reg0_111
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y39.BQ      Tcko                  0.447   roundCounter/round_0_1
+                                                       roundCounter/round_0_1
+    SLICE_X15Y39.D2      net (fanout=12)       0.472   roundCounter/round_0_1
+    SLICE_X15Y39.D       Tilo                  0.259   keyScheduler/r_addr<1>
+                                                       keyScheduler/r_addr<1>1
+    SLICE_X10Y40.B3      net (fanout=47)       1.046   keyScheduler/r_addr<1>
+    SLICE_X10Y40.B       Tilo                  0.203   roundKey<111>
+                                                       keyScheduler/keyRAM/Mram_keys112/DP
+    SLICE_X7Y45.D6       net (fanout=7)        0.993   roundKey<111>
+    SLICE_X7Y45.CLK      Tas                   0.322   decrypter/reg0<111>
+                                                       decrypter/Mxor_from_addrkey_111_xo<0>1
+                                                       decrypter/reg0_111
+    -------------------------------------------------  ---------------------------
+    Total                                      3.742ns (1.231ns logic, 2.511ns route)
+                                                       (32.9% logic, 67.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -0.835ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          decrypter/reg0_111 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      3.657ns (Levels of Logic = 3)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to decrypter/reg0_111
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X15Y39.D5      net (fanout=15)       0.443   keyScheduler/keys_filled_s
+    SLICE_X15Y39.D       Tilo                  0.259   keyScheduler/r_addr<1>
+                                                       keyScheduler/r_addr<1>1
+    SLICE_X10Y40.B3      net (fanout=47)       1.046   keyScheduler/r_addr<1>
+    SLICE_X10Y40.B       Tilo                  0.203   roundKey<111>
+                                                       keyScheduler/keyRAM/Mram_keys112/DP
+    SLICE_X7Y45.D6       net (fanout=7)        0.993   roundKey<111>
+    SLICE_X7Y45.CLK      Tas                   0.322   decrypter/reg0<111>
+                                                       decrypter/Mxor_from_addrkey_111_xo<0>1
+                                                       decrypter/reg0_111
+    -------------------------------------------------  ---------------------------
+    Total                                      3.657ns (1.175ns logic, 2.482ns route)
+                                                       (32.1% logic, 67.9% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point decrypter/reg1_22 (SLICE_X15Y23.CE), 1 path
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.004ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          decrypter/reg1_22 (FF)
+  Requirement:          2.857ns
+  Data Path Delay:      3.826ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to decrypter/reg1_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X20Y39.D3      net (fanout=15)       1.006   keyScheduler/keys_filled_s
+    SLICE_X20Y39.D       Tilo                  0.205   decrypter/reg1<90>
+                                                       decEn1
+    SLICE_X15Y23.CE      net (fanout=242)      1.900   decEn
+    SLICE_X15Y23.CLK     Tceck                 0.324   decrypter/reg1<22>
+                                                       decrypter/reg1_22
+    -------------------------------------------------  ---------------------------
+    Total                                      3.826ns (0.920ns logic, 2.906ns route)
+                                                       (24.0% logic, 76.0% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clk = PERIOD TIMEGRP "clk" 2.857 ns HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point decrypter/reg2_73 (SLICE_X12Y25.B6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.506ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               decrypter/reg1_11 (FF)
+  Destination:          decrypter/reg2_73 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.506ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 2.857ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: decrypter/reg1_11 to decrypter/reg2_73
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X13Y25.AQ      Tcko                  0.198   decrypter/reg1<21>
+                                                       decrypter/reg1_11
+    SLICE_X12Y25.B6      net (fanout=32)       0.068   decrypter/reg1<11>
+    SLICE_X12Y25.CLK     Tah         (-Th)    -0.240   decrypter/reg2<73>
+                                                       decrypter/invSbox_Mram_q<79:72>22
+                                                       decrypter/invSbox_Mram_q<79:72>2_f7
+                                                       decrypter/invSbox_Mram_q<79:72>2_f8
+                                                       decrypter/reg2_73
+    -------------------------------------------------  ---------------------------
+    Total                                      0.506ns (0.438ns logic, 0.068ns route)
+                                                       (86.6% logic, 13.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point encrypter/reg0_127 (SLICE_X9Y39.D4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.526ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               encrypter/reg2_127 (FF)
+  Destination:          encrypter/reg0_127 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.526ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 2.857ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: encrypter/reg2_127 to encrypter/reg0_127
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y39.BQ       Tcko                  0.198   encrypter/reg0<127>
+                                                       encrypter/reg2_127
+    SLICE_X9Y39.D4       net (fanout=2)        0.113   encrypter/reg2<127>
+    SLICE_X9Y39.CLK      Tah         (-Th)    -0.215   encrypter/reg0<127>
+                                                       encrypter/Mmux_from_addrkey[127]_from_addrkey[127]_mux_5_OUT31
+                                                       encrypter/reg0_127
+    -------------------------------------------------  ---------------------------
+    Total                                      0.526ns (0.413ns logic, 0.113ns route)
+                                                       (78.5% logic, 21.5% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point decrypter/reg2_22 (SLICE_X30Y30.BX), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.533ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               decrypter/reg1_55 (FF)
+  Destination:          decrypter/reg2_22 (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.533ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clk rising at 2.857ns
+  Destination Clock:    clk rising at 2.857ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: decrypter/reg1_55 to decrypter/reg2_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X31Y32.BQ      Tcko                  0.198   decrypter/reg1<55>
+                                                       decrypter/reg1_55
+    SLICE_X30Y30.BX      net (fanout=8)        0.273   decrypter/reg1<55>
+    SLICE_X30Y30.CLK     Tckdi       (-Th)    -0.062   decrypter/reg2<22>
+                                                       decrypter/invSbox_Mram_q<23:16>12_f8
+                                                       decrypter/reg2_22
+    -------------------------------------------------  ---------------------------
+    Total                                      0.533ns (0.260ns logic, 0.273ns route)
+                                                       (48.8% logic, 51.2% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clk = PERIOD TIMEGRP "clk" 2.857 ns HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 1.857ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 1.000ns (1000.000MHz) (Tcp)
+  Physical resource: encrypter/rnd_reg2/CLK
+  Logical resource: encrypter/Mshreg_rnd_reg2/CLK
+  Location pin: SLICE_X26Y35.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 2.427ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: decrypter/reg2<2>/CLK
+  Logical resource: decrypter/reg2_2/CK
+  Location pin: SLICE_X0Y38.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+Slack: 2.427ns (period - min period limit)
+  Period: 2.857ns
+  Min period limit: 0.430ns (2325.581MHz) (Tcp)
+  Physical resource: encrypter/reg1<118>/CLK
+  Logical resource: encrypter/reg1_118/CK
+  Location pin: SLICE_X0Y39.CLK
+  Clock network: clk
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_clockDivider_tmp = PERIOD TIMEGRP "clockDivider/tmp" 
+TS_clk * 3 HIGH 50%;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 109203 paths analyzed, 1567 endpoints analyzed, 28 failing endpoints
+ 28 timing errors detected. (28 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is  10.046ns.
+--------------------------------------------------------------------------------
+
+Paths for end point keyScheduler/keyRAM/Mram_keys1/DP (SLICE_X10Y38.DX), 434 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.475ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/DP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      10.006ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to keyScheduler/keyRAM/Mram_keys1/DP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X13Y38.D2      net (fanout=15)       0.684   keyScheduler/keys_filled_s
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y36.C3      net (fanout=7)        0.702   keyScheduler/r_addr<1>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.C3      net (fanout=36)       3.784   roundKey<25>
+    SLICE_X36Y43.BMUX    Topcb                 0.371   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT3
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                   0.001   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/DP
+    -------------------------------------------------  ---------------------------
+    Total                                     10.006ns (1.542ns logic, 8.464ns route)
+                                                       (15.4% logic, 84.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.439ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_3_1 (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/DP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.970ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_3_1 to keyScheduler/keyRAM/Mram_keys1/DP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y38.BQ      Tcko                  0.447   roundCounter/round_3_1
+                                                       roundCounter/round_3_1
+    SLICE_X12Y38.D1      net (fanout=4)        0.649   roundCounter/round_3_1
+    SLICE_X12Y38.D       Tilo                  0.205   encrypter/reg0<1>
+                                                       keyScheduler/r_addr<3>1_1
+    SLICE_X14Y36.C5      net (fanout=7)        0.699   keyScheduler/r_addr<3>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.C3      net (fanout=36)       3.784   roundKey<25>
+    SLICE_X36Y43.BMUX    Topcb                 0.371   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT3
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                   0.001   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/DP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.970ns (1.544ns logic, 8.426ns route)
+                                                       (15.5% logic, 84.5% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.433ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/DP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.964ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to keyScheduler/keyRAM/Mram_keys1/DP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X13Y38.D2      net (fanout=15)       0.684   keyScheduler/keys_filled_s
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y36.C3      net (fanout=7)        0.702   keyScheduler/r_addr<1>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.D3      net (fanout=36)       3.747   roundKey<25>
+    SLICE_X36Y43.BMUX    Topdb                 0.366   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT4
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                   0.001   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/DP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.964ns (1.537ns logic, 8.427ns route)
+                                                       (15.4% logic, 84.6% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point keyScheduler/keyRAM/Mram_keys1/SP (SLICE_X10Y38.DX), 434 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.404ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.935ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to keyScheduler/keyRAM/Mram_keys1/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X13Y38.D2      net (fanout=15)       0.684   keyScheduler/keys_filled_s
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y36.C3      net (fanout=7)        0.702   keyScheduler/r_addr<1>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.C3      net (fanout=36)       3.784   roundKey<25>
+    SLICE_X36Y43.BMUX    Topcb                 0.371   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT3
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                  -0.070   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.935ns (1.471ns logic, 8.464ns route)
+                                                       (14.8% logic, 85.2% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.368ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_3_1 (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.899ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_3_1 to keyScheduler/keyRAM/Mram_keys1/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y38.BQ      Tcko                  0.447   roundCounter/round_3_1
+                                                       roundCounter/round_3_1
+    SLICE_X12Y38.D1      net (fanout=4)        0.649   roundCounter/round_3_1
+    SLICE_X12Y38.D       Tilo                  0.205   encrypter/reg0<1>
+                                                       keyScheduler/r_addr<3>1_1
+    SLICE_X14Y36.C5      net (fanout=7)        0.699   keyScheduler/r_addr<3>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.C3      net (fanout=36)       3.784   roundKey<25>
+    SLICE_X36Y43.BMUX    Topcb                 0.371   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT3
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                  -0.070   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.899ns (1.473ns logic, 8.426ns route)
+                                                       (14.9% logic, 85.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.362ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys1/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.893ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.005ns (0.250 - 0.255)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to keyScheduler/keyRAM/Mram_keys1/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X13Y38.D2      net (fanout=15)       0.684   keyScheduler/keys_filled_s
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y36.C3      net (fanout=7)        0.702   keyScheduler/r_addr<1>1
+    SLICE_X14Y36.CMUX    Tilo                  0.261   roundCounter/round_0_3
+                                                       keyScheduler/keyRAM/Mram_keys26/DP
+    SLICE_X36Y43.D3      net (fanout=36)       3.747   roundKey<25>
+    SLICE_X36Y43.BMUX    Topdb                 0.366   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT4
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT_f8
+    SLICE_X17Y42.C4      net (fanout=4)        2.222   keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<0>
+    SLICE_X17Y42.C       Tilo                  0.259   encrypter/reg0<90>
+                                                       keyScheduler/Mmux_w_key1
+    SLICE_X10Y38.DX      net (fanout=1)        1.072   keyScheduler/w_key<0>
+    SLICE_X10Y38.CLK     Tds                  -0.070   roundKey<1>
+                                                       keyScheduler/keyRAM/Mram_keys1/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.893ns (1.466ns logic, 8.427ns route)
+                                                       (14.8% logic, 85.2% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point keyScheduler/keyRAM/Mram_keys56/SP (SLICE_X22Y37.DI), 420 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.147ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               keyScheduler/keys_filled_s (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys56/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.670ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.013ns (0.337 - 0.350)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: keyScheduler/keys_filled_s to keyScheduler/keyRAM/Mram_keys56/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y38.AQ      Tcko                  0.391   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s
+    SLICE_X13Y38.D2      net (fanout=15)       0.684   keyScheduler/keys_filled_s
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y34.A3      net (fanout=7)        0.956   keyScheduler/r_addr<1>1
+    SLICE_X14Y34.A       Tilo                  0.203   roundKey<12>
+                                                       keyScheduler/keyRAM/Mram_keys14/DP
+    SLICE_X0Y37.D2       net (fanout=36)       2.093   roundKey<13>
+    SLICE_X0Y37.BMUX     Topdb                 0.366   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT143
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f8
+    SLICE_X24Y41.B1      net (fanout=4)        2.907   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+    SLICE_X24Y41.B       Tilo                  0.205   keyScheduler/w_key<53>
+                                                       keyScheduler/Mmux_w_key791
+    SLICE_X22Y37.DI      net (fanout=2)        1.586   keyScheduler/w_key<55>
+    SLICE_X22Y37.CLK     Tds                   0.020   roundKey<55>
+                                                       keyScheduler/keyRAM/Mram_keys56/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.670ns (1.444ns logic, 8.226ns route)
+                                                       (14.9% logic, 85.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.120ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_3_1 (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys56/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.643ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.013ns (0.337 - 0.350)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_3_1 to keyScheduler/keyRAM/Mram_keys56/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y38.BQ      Tcko                  0.447   roundCounter/round_3_1
+                                                       roundCounter/round_3_1
+    SLICE_X12Y38.D1      net (fanout=4)        0.649   roundCounter/round_3_1
+    SLICE_X12Y38.D       Tilo                  0.205   encrypter/reg0<1>
+                                                       keyScheduler/r_addr<3>1_1
+    SLICE_X14Y34.A5      net (fanout=7)        0.962   keyScheduler/r_addr<3>1
+    SLICE_X14Y34.A       Tilo                  0.203   roundKey<12>
+                                                       keyScheduler/keyRAM/Mram_keys14/DP
+    SLICE_X0Y37.D2       net (fanout=36)       2.093   roundKey<13>
+    SLICE_X0Y37.BMUX     Topdb                 0.366   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT143
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f8
+    SLICE_X24Y41.B1      net (fanout=4)        2.907   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+    SLICE_X24Y41.B       Tilo                  0.205   keyScheduler/w_key<53>
+                                                       keyScheduler/Mmux_w_key791
+    SLICE_X22Y37.DI      net (fanout=2)        1.586   keyScheduler/w_key<55>
+    SLICE_X22Y37.CLK     Tds                   0.020   roundKey<55>
+                                                       keyScheduler/keyRAM/Mram_keys56/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.643ns (1.446ns logic, 8.197ns route)
+                                                       (15.0% logic, 85.0% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     -1.082ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               roundCounter/round_1_1 (FF)
+  Destination:          keyScheduler/keyRAM/Mram_keys56/SP (RAM)
+  Requirement:          8.571ns
+  Data Path Delay:      9.602ns (Levels of Logic = 4)
+  Clock Path Skew:      -0.016ns (0.337 - 0.353)
+  Source Clock:         fast_clk_o rising at 0.000ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.035ns
+
+  Clock Uncertainty:          0.035ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.000ns
+    Discrete Jitter (DJ):       0.000ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: roundCounter/round_1_1 to keyScheduler/keyRAM/Mram_keys56/SP
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y37.AMUX    Tshcko                0.461   roundCounter/round<3>
+                                                       roundCounter/round_1_1
+    SLICE_X13Y38.D6      net (fanout=12)       0.546   roundCounter/round_1_1
+    SLICE_X13Y38.D       Tilo                  0.259   encrypter/reg2<113>
+                                                       keyScheduler/r_addr<1>1_1
+    SLICE_X14Y34.A3      net (fanout=7)        0.956   keyScheduler/r_addr<1>1
+    SLICE_X14Y34.A       Tilo                  0.203   roundKey<12>
+                                                       keyScheduler/keyRAM/Mram_keys14/DP
+    SLICE_X0Y37.D2       net (fanout=36)       2.093   roundKey<13>
+    SLICE_X0Y37.BMUX     Topdb                 0.366   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT143
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f7_0
+                                                       keyScheduler/keyExpand_Mram_d[15]_GND_14_o_wide_mux_3_OUT14_f8
+    SLICE_X24Y41.B1      net (fanout=4)        2.907   keyScheduler/keyExpand/d[15]_GND_14_o_wide_mux_3_OUT<7>
+    SLICE_X24Y41.B       Tilo                  0.205   keyScheduler/w_key<53>
+                                                       keyScheduler/Mmux_w_key791
+    SLICE_X22Y37.DI      net (fanout=2)        1.586   keyScheduler/w_key<55>
+    SLICE_X22Y37.CLK     Tds                   0.020   roundKey<55>
+                                                       keyScheduler/keyRAM/Mram_keys56/SP
+    -------------------------------------------------  ---------------------------
+    Total                                      9.602ns (1.514ns logic, 8.088ns route)
+                                                       (15.8% logic, 84.2% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_clockDivider_tmp = PERIOD TIMEGRP "clockDivider/tmp" TS_clk * 3 HIGH 50%;
+--------------------------------------------------------------------------------
+
+Paths for end point clockDivider/tmp (SLICE_X24Y52.C5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.525ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               clockDivider/tmp (LATCH)
+  Destination:          clockDivider/tmp (LATCH)
+  Requirement:          0.000ns
+  Data Path Delay:      0.525ns (Levels of Logic = 1)
+  Clock Path Skew:      0.000ns
+  Source Clock:         clockDivider/GND_16_o_count[31]_equal_2_o falling at 12.856ns
+  Destination Clock:    clockDivider/GND_16_o_count[31]_equal_2_o falling at 12.856ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: clockDivider/tmp to clockDivider/tmp
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X24Y52.CQ      Tcklo                 0.237   clockDivider/tmp
+                                                       clockDivider/tmp
+    SLICE_X24Y52.C5      net (fanout=2)        0.068   clockDivider/tmp
+    SLICE_X24Y52.CLK     Tah         (-Th)    -0.220   clockDivider/tmp
+                                                       clockDivider/tmp_INV_32_o1_INV_0
+                                                       clockDivider/tmp
+    -------------------------------------------------  ---------------------------
+    Total                                      0.525ns (0.457ns logic, 0.068ns route)
+                                                       (87.0% logic, 13.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point keyScheduler/keys_filled_s (SLICE_X15Y38.A6), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.600ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               roundCounter/round_1 (FF)
+  Destination:          keyScheduler/keys_filled_s (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.599ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.033 - 0.034)
+  Source Clock:         fast_clk_o rising at 8.571ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: roundCounter/round_1 to keyScheduler/keys_filled_s
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X14Y37.BQ      Tcko                  0.234   roundCounter/round<1>
+                                                       roundCounter/round_1
+    SLICE_X15Y38.A6      net (fanout=31)       0.150   roundCounter/round<1>
+    SLICE_X15Y38.CLK     Tah         (-Th)    -0.215   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s_glue_set
+                                                       keyScheduler/keys_filled_s
+    -------------------------------------------------  ---------------------------
+    Total                                      0.599ns (0.449ns logic, 0.150ns route)
+                                                       (75.0% logic, 25.0% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point keyScheduler/keys_filled_s (SLICE_X15Y38.A4), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.647ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               roundCounter/round_3 (FF)
+  Destination:          keyScheduler/keys_filled_s (FF)
+  Requirement:          0.000ns
+  Data Path Delay:      0.646ns (Levels of Logic = 1)
+  Clock Path Skew:      -0.001ns (0.033 - 0.034)
+  Source Clock:         fast_clk_o rising at 8.571ns
+  Destination Clock:    fast_clk_o rising at 8.571ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: roundCounter/round_3 to keyScheduler/keys_filled_s
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X15Y37.DQ      Tcko                  0.198   roundCounter/round<3>
+                                                       roundCounter/round_3
+    SLICE_X15Y38.A4      net (fanout=28)       0.233   roundCounter/round<3>
+    SLICE_X15Y38.CLK     Tah         (-Th)    -0.215   keyScheduler/keys_filled_s
+                                                       keyScheduler/keys_filled_s_glue_set
+                                                       keyScheduler/keys_filled_s
+    -------------------------------------------------  ---------------------------
+    Total                                      0.646ns (0.413ns logic, 0.233ns route)
+                                                       (63.9% logic, 36.1% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_clockDivider_tmp = PERIOD TIMEGRP "clockDivider/tmp" TS_clk * 3 HIGH 50%;
+--------------------------------------------------------------------------------
+Slack: 6.841ns (period - min period limit)
+  Period: 8.571ns
+  Min period limit: 1.730ns (578.035MHz) (Tbcper_I)
+  Physical resource: clockDivider/tmp_BUFG/I0
+  Logical resource: clockDivider/tmp_BUFG/I0
+  Location pin: BUFGMUX_X2Y3.I0
+  Clock network: clockDivider/tmp
+--------------------------------------------------------------------------------
+Slack: 7.533ns (period - min period limit)
+  Period: 8.571ns
+  Min period limit: 1.038ns (963.391MHz) (Tcp)
+  Physical resource: roundKey<122>/CLK
+  Logical resource: keyScheduler/keyRAM/Mram_keys122/SP/CLK
+  Location pin: SLICE_X6Y37.CLK
+  Clock network: fast_clk_o
+--------------------------------------------------------------------------------
+Slack: 7.533ns (period - min period limit)
+  Period: 8.571ns
+  Min period limit: 1.038ns (963.391MHz) (Tcp)
+  Physical resource: roundKey<122>/CLK
+  Logical resource: keyScheduler/keyRAM/Mram_keys121/DP/CLK
+  Location pin: SLICE_X6Y37.CLK
+  Clock network: fast_clk_o
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_clk
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_clk                         |      2.857ns|      3.881ns|      3.349ns|         1788|           28|        15691|       109203|
+| TS_clockDivider_tmp           |      8.571ns|     10.046ns|          N/A|           28|            0|       109203|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+2 constraints not met.
 
 
 Data Sheet report:
@@ -34,14 +1019,28 @@ No constraints were found to generate data for the Data Sheet Report section.
 Use the Advanced Analysis (-a) option or generate global constraints for each
 clock, its pad to setup and clock to pad paths, and a pad to pad constraint.
 
-Analysis completed Sat Feb 24 20:16:22 2018 
+Timing summary:
+---------------
+
+Timing errors: 1816  Score: 693766  (Setup/Max: 693766, Hold: 0)
+
+Constraints cover 124894 paths, 0 nets, and 13769 connections
+
+Design statistics:
+   Minimum period:  10.046ns{1}   (Maximum frequency:  99.542MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Sun Apr 22 01:36:24 2018 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 262 MB
+Peak Memory Usage: 271 MB
 
 
 

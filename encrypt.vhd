@@ -63,6 +63,9 @@ signal reg0 : STD_LOGIC_VECTOR(127 downto 0);
 signal reg1 : STD_LOGIC_VECTOR(127 downto 0);
 signal reg2 : STD_LOGIC_VECTOR(127 downto 0);
 
+signal rnd_reg1 : STD_LOGIC;
+signal rnd_reg2 : STD_LOGIC;
+
 begin
 	
 	sBoxShift : sbox_shift PORT MAP(reg0, from_sbox);
@@ -73,6 +76,7 @@ begin
 	mix3 : mixcolumns PORT MAP(reg1(31 downto 0), from_mix3);
 	
 	from_addrkey <= reg2 XOR round_key;
+		
 	next_state <= from_addrkey;
 	
 	PROCESS(clk)
@@ -82,15 +86,26 @@ begin
 				
 				if round_number = x"a" then
 					reg0 <= from_addrkey;
-					reg2 <= reg1;
+					--reg2 <= reg1;
 				elsif round_number = x"0" then
 					reg0 <= state;
-					reg2 <=  from_mix0 & from_mix1 & from_mix2 & from_mix3;
 				else
 					reg0 <= from_addrkey;
-					reg2 <=  from_mix0 & from_mix1 & from_mix2 & from_mix3;
 				end if;
 				reg1 <= from_sbox;
+				
+				reg2 <=  from_mix0 & from_mix1 & from_mix2 & from_mix3;
+				
+				if round_number = x"9" then
+					rnd_reg1 <= '1';
+				else
+					rnd_reg1 <= '0';
+				end if;
+				rnd_reg2 <= rnd_reg1;
+				
+				if rnd_reg2 = '1' then
+					reg2 <= reg1;
+				end if;
 				
 			end if;
 		end if;

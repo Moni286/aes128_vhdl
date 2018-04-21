@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Sat Feb 24 20:16:15 2018
+Sun Apr 22 01:36:16 2018
 
 All signals are completely routed.
 
@@ -268,31 +268,10 @@ WARNING:ParHelpers:362 - There are 260 sourceless signals in this design. This d
    key<99>
    key<9>
    w
-WARNING:ParHelpers:361 - There are 150 loadless signals in this design. This design will cause Bitgen to issue DRC
+WARNING:ParHelpers:361 - There are 129 loadless signals in this design. This design will cause Bitgen to issue DRC
    warnings.
 
    done
-   keyScheduler/keyRAM/Mram_keys10_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys11_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys12_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys13_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys14_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys15_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys16_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys17_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys18_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys19_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys1_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys20_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys21_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys2_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys3_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys4_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys5_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys6_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys7_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys8_RAMD_D1_O
-   keyScheduler/keyRAM/Mram_keys9_RAMD_D1_O
    q<0>
    q<100>
    q<101>

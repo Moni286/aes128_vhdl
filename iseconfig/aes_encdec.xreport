@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2018-02-24T20:17:00</DateModified>
+  <DateModified>2018-04-22T01:33:28</DateModified>
   <ModuleName>aes_encdec</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
   <ImplementationReportsDirectory>C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4\</ImplementationReportsDirectory>
-  <DateInitialized>2018-02-24T20:17:00</DateInitialized>
+  <DateInitialized>2018-04-22T01:33:28</DateInitialized>
   <SavedFilePath>C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/iseconfig/aes_encdec.xreport</SavedFilePath>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

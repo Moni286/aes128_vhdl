@@ -8,5 +8,41 @@
 <!-- Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.    -->
 
 <messages>
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/aes_encdec.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/clock_divider.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/decrypt.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/encrypt.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/inv_mixcolumns.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/inv_sbox.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/key_expand.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/key_ram.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/key_scheduler.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/mixcolumns.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/round_counter.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/sbox.vhd&quot; into library work</arg>
+</msg>
+
 </messages>
 

@@ -13,6 +13,7 @@ Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl
 Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/key_scheduler.vhd" into library work
 Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/encrypt.vhd" into library work
 Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/decrypt.vhd" into library work
+Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/clock_divider.vhd" into library work
 Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/aes_encdec.vhd" into library work
 Parsing VHDL file "C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/aes_encdec_tb.vhd" into library work
 Starting static elaboration
@@ -21,10 +22,6 @@ Compiling package standard
 Compiling package std_logic_1164
 Compiling package vcomponents
 Compiling package numeric_std
-Compiling package textio
-Compiling package vital_timing
-Compiling package vital_primitives
-Compiling package vpkg
 Compiling architecture behavioral of entity sbox_shift [sbox_shift_default]
 Compiling architecture behavioral of entity mixcolumns [mixcolumns_default]
 Compiling architecture behavioral of entity encrypt [encrypt_default]
@@ -35,16 +32,12 @@ Compiling architecture behavioral of entity key_ram [key_ram_default]
 Compiling architecture behavioral of entity key_expand [key_expand_default]
 Compiling architecture behavioral of entity key_scheduler [key_scheduler_default]
 Compiling architecture behavioral of entity round_counter [round_counter_default]
-Compiling architecture dcm_sp_clock_divide_by_2_v of entity dcm_sp_clock_divide_by_2 [dcm_sp_clock_divide_by_2_default]
-Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
-Compiling architecture dcm_sp_maximum_period_check_v of entity dcm_sp_maximum_period_check [\dcm_sp_maximum_period_check("*"...]
-Compiling architecture dcm_sp_clock_lost_v of entity dcm_sp_clock_lost [dcm_sp_clock_lost_default]
-Compiling architecture dcm_sp_v of entity DCM_SP [\DCM_SP(true,"*",true,false,3.0,...]
+Compiling architecture bhv of entity Clock_Divider [clock_divider_default]
 Compiling architecture behavioral of entity aes_encdec [aes_encdec_default]
 Compiling architecture behavior of entity aes_encdec_tb
 Time Resolution for simulation is 1ps.
-Waiting for 5 sub-compilation(s) to finish...
-Compiled 41 VHDL Units
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 29 VHDL Units
 Built simulation executable C:/Users/HP/Desktop/University/Academics/Capstone/aes128_vhdl/aes128_v4/aes_encdec_tb_isim_beh.exe
-Fuse Memory Usage: 59072 KB
-Fuse CPU Usage: 1091 ms
+Fuse Memory Usage: 50820 KB
+Fuse CPU Usage: 764 ms

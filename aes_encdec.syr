@@ -3,13 +3,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 --> Parameter TMPDIR set to xst/projnav.tmp
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Parameter xsthdpdir set to xst
 
 
-Total REAL time to Xst completion: 0.00 secs
+Total REAL time to Xst completion: 1.00 secs
 Total CPU time to Xst completion: 0.08 secs
  
 --> Reading design: aes_encdec.prj
@@ -63,7 +63,7 @@ Resource Sharing                   : YES
 Asynchronous To Synchronous        : NO
 Shift Register Minimum Size        : 2
 Use DSP Block                      : Auto
-Automatic Register Balancing       : No
+Automatic Register Balancing       : Yes
 
 ---- Target Options
 LUT Combining                      : Auto
@@ -72,11 +72,13 @@ Add IO Buffers                     : NO
 Global Maximum Fanout              : 100000
 Add Generic Clock Buffer(BUFG)     : 16
 Register Duplication               : YES
+Move First FlipFlop Stage          : YES
+Move Last FlipFlop Stage           : YES
 Optimize Instantiated Primitives   : NO
 Use Clock Enable                   : Auto
 Use Synchronous Set                : Auto
 Use Synchronous Reset              : Auto
-Pack IO Registers into IOBs        : Auto
+Pack IO Registers into IOBs        : True
 Equivalent register Removal        : YES
 
 ---- General Options
@@ -135,6 +137,9 @@ Parsing architecture <Behavioral> of entity <encrypt>.
 Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\decrypt.vhd" into library work
 Parsing entity <decrypt>.
 Parsing architecture <Behavioral> of entity <decrypt>.
+Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\clock_divider.vhd" into library work
+Parsing entity <Clock_Divider>.
+Parsing architecture <bhv> of entity <clock_divider>.
 Parsing VHDL file "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd" into library work
 Parsing entity <aes_encdec>.
 Parsing architecture <Behavioral> of entity <aes_encdec>.
@@ -164,7 +169,11 @@ Elaborating entity <key_ram> (architecture <Behavioral>) from library <work>.
 Elaborating entity <key_expand> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <round_counter> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:1127 - "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd" Line 131: Assignment to clk_rst ignored, since the identifier is never used
+
+Elaborating entity <Clock_Divider> (architecture <bhv>) from library <work>.
+WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\clock_divider.vhd" Line 23: count should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\clock_divider.vhd" Line 24: count should be on the sensitivity list of the process
+WARNING:HDLCompiler:92 - "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\clock_divider.vhd" Line 25: tmp should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -173,18 +182,21 @@ WARNING:HDLCompiler:1127 - "C:\Users\HP\Desktop\University\Academics\Capstone\ae
 Synthesizing Unit <aes_encdec>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\aes_encdec.vhd".
     Found 1-bit register for signal <done>.
+    Found 1-bit register for signal <clk_rst>.
     Summary:
-	inferred   1 D-type flip-flop(s).
+	inferred   2 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 Unit <aes_encdec> synthesized.
 
 Synthesizing Unit <encrypt>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\encrypt.vhd".
-    Found 128-bit register for signal <reg2>.
     Found 128-bit register for signal <reg1>.
+    Found 128-bit register for signal <reg2>.
+    Found 1-bit register for signal <rnd_reg1>.
+    Found 1-bit register for signal <rnd_reg2>.
     Found 128-bit register for signal <reg0>.
     Summary:
-	inferred 384 D-type flip-flop(s).
+	inferred 386 D-type flip-flop(s).
 	inferred   3 Multiplexer(s).
 Unit <encrypt> synthesized.
 
@@ -226,11 +238,12 @@ Unit <mixcolumns> synthesized.
 
 Synthesizing Unit <decrypt>.
     Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\decrypt.vhd".
-    Found 128-bit register for signal <reg0>.
-    Found 128-bit register for signal <reg2>.
     Found 128-bit register for signal <reg1>.
+    Found 128-bit register for signal <reg2>.
+    Found 1-bit register for signal <rnd_reg>.
+    Found 128-bit register for signal <reg0>.
     Summary:
-	inferred 384 D-type flip-flop(s).
+	inferred 385 D-type flip-flop(s).
 	inferred   2 Multiplexer(s).
 Unit <decrypt> synthesized.
 
@@ -317,6 +330,17 @@ Synthesizing Unit <round_counter>.
 	inferred   1 Comparator(s).
 Unit <round_counter> synthesized.
 
+Synthesizing Unit <Clock_Divider>.
+    Related source file is "C:\Users\HP\Desktop\University\Academics\Capstone\aes128_vhdl\aes128_v4\clock_divider.vhd".
+WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 32-bit adder for signal <count[31]_GND_16_o_add_0_OUT> created at line 23.
+WARNING:Xst:737 - Found 1-bit latch for signal <tmp>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+	inferred   1 Latch(s).
+	inferred   2 Multiplexer(s).
+Unit <Clock_Divider> synthesized.
+
 =========================================================================
 HDL Synthesis Report
 
@@ -324,17 +348,21 @@ Macro Statistics
 # RAMs                                                 : 133
  16x128-bit dual-port RAM                              : 1
  256x8-bit single-port Read Only RAM                   : 132
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 4
+ 32-bit adder                                          : 1
  4-bit adder                                           : 2
  4-bit subtractor                                      : 1
-# Registers                                            : 9
- 1-bit register                                        : 2
+# Registers                                            : 13
+ 1-bit register                                        : 6
  128-bit register                                      : 6
  4-bit register                                        : 1
+# Latches                                              : 1
+ 1-bit latch                                           : 1
 # Comparators                                          : 1
  4-bit comparator greater                              : 1
-# Multiplexers                                         : 10
+# Multiplexers                                         : 12
  128-bit 2-to-1 multiplexer                            : 8
+ 32-bit 2-to-1 multiplexer                             : 2
  4-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 41
  128-bit xor2                                          : 4
@@ -348,6 +376,8 @@ Macro Statistics
 *                       Advanced HDL Synthesis                          *
 =========================================================================
 
+WARNING:Xst:1426 - The value init of the FF/Latch clk_rst hinder the constant cleaning in the block aes_encdec.
+   You should achieve better results by setting this init to 0.
 
 Synthesizing (advanced) Unit <inv_mixcolumns>.
 INFO:Xst:3216 - HDL ADVISOR - LUT implementation is currently selected for the RAM <Mram_d[31]_PWR_10_o_wide_mux_0_OUT>. If you want the register to be removed and the RAM to be implemented as block RAM, please change the RAM implementation style accordingly.
@@ -1054,18 +1084,20 @@ Macro Statistics
 # RAMs                                                 : 133
  16x128-bit dual-port distributed RAM                  : 1
  256x8-bit single-port distributed Read Only RAM       : 132
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
+ 32-bit adder                                          : 1
  4-bit adder                                           : 1
  4-bit subtractor                                      : 1
 # Counters                                             : 1
  4-bit up counter                                      : 1
-# Registers                                            : 770
- Flip-Flops                                            : 770
+# Registers                                            : 774
+ Flip-Flops                                            : 774
 # Comparators                                          : 1
  4-bit comparator greater                              : 1
-# Multiplexers                                         : 391
+# Multiplexers                                         : 393
  1-bit 2-to-1 multiplexer                              : 384
  128-bit 2-to-1 multiplexer                            : 5
+ 32-bit 2-to-1 multiplexer                             : 2
  4-bit 2-to-1 multiplexer                              : 2
 # Xors                                                 : 41
  128-bit xor2                                          : 4
@@ -1078,6 +1110,9 @@ Macro Statistics
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch clk_rst hinder the constant cleaning in the block aes_encdec.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:2170 - Unit aes_encdec : the following signal(s) form a combinatorial loop: clockDivider/count<31>, clockDivider/GND_16_o_count[31]_equal_2_o.
 
 Optimizing unit <aes_encdec> ...
 
@@ -1091,21 +1126,26 @@ Optimizing unit <inv_mixcolumns> ...
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block aes_encdec, actual ratio is 31.
-FlipFlop keyScheduler/keys_filled_s has been replicated 3 time(s)
-FlipFlop roundCounter/round_0 has been replicated 6 time(s)
-FlipFlop roundCounter/round_1 has been replicated 3 time(s)
-FlipFlop roundCounter/round_2 has been replicated 5 time(s)
-FlipFlop roundCounter/round_3 has been replicated 4 time(s)
+Found area constraint ratio of 100 (+ 5) on block aes_encdec, actual ratio is 34.
+FlipFlop roundCounter/round_0 has been replicated 3 time(s)
+FlipFlop roundCounter/round_1 has been replicated 1 time(s)
+FlipFlop roundCounter/round_2 has been replicated 1 time(s)
+FlipFlop roundCounter/round_3 has been replicated 1 time(s)
 
 Final Macro Processing ...
+
+Processing Unit <aes_encdec> :
+	Found 2-bit shift register for signal <encrypter/rnd_reg2>.
+Unit <aes_encdec> processed.
 
 =========================================================================
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 795
- Flip-Flops                                            : 795
+# Registers                                            : 782
+ Flip-Flops                                            : 782
+# Shift Registers                                      : 1
+ 2-bit shift register                                  : 1
 
 =========================================================================
 
@@ -1128,27 +1168,30 @@ Top Level Output File Name         : aes_encdec.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3968
+# BELS                             : 3663
 #      GND                         : 1
-#      INV                         : 1
-#      LUT2                        : 171
-#      LUT3                        : 256
-#      LUT4                        : 677
-#      LUT5                        : 233
-#      LUT6                        : 1765
+#      INV                         : 3
+#      LUT2                        : 172
+#      LUT3                        : 278
+#      LUT4                        : 251
+#      LUT5                        : 237
+#      LUT6                        : 1793
+#      MUXCY                       : 31
 #      MUXF7                       : 576
 #      MUXF8                       : 288
-# FlipFlops/Latches                : 795
-#      FD                          : 1
-#      FDE                         : 768
-#      FDR                         : 26
-# RAMS                             : 23
-#      RAM16X1D                    : 2
-#      RAM32M                      : 21
+#      VCC                         : 1
+#      XORCY                       : 32
+# FlipFlops/Latches                : 784
+#      FD                          : 2
+#      FDE                         : 770
+#      FDR                         : 11
+#      LDC                         : 1
+# RAMS                             : 128
+#      RAM16X1D                    : 128
+# Shift Registers                  : 1
+#      SRLC16E                     : 1
 # Clock Buffers                    : 1
 #      BUFG                        : 1
-# DCMs                             : 1
-#      DCM_SP                      : 1
 
 Device utilization summary:
 ---------------------------
@@ -1157,21 +1200,22 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             795  out of  18224     4%  
- Number of Slice LUTs:                 3191  out of   9112    35%  
-    Number used as Logic:              3103  out of   9112    34%  
-    Number used as Memory:               88  out of   2176     4%  
-       Number used as RAM:               88
+ Number of Slice Registers:             784  out of  18224     4%  
+ Number of Slice LUTs:                 2991  out of   9112    32%  
+    Number used as Logic:              2734  out of   9112    30%  
+    Number used as Memory:              257  out of   2176    11%  
+       Number used as RAM:              256
+       Number used as SRL:                1
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   3204
-   Number with an unused Flip Flop:    2409  out of   3204    75%  
-   Number with an unused LUT:            13  out of   3204     0%  
-   Number of fully used LUT-FF pairs:   782  out of   3204    24%  
-   Number of unique control sets:        16
+ Number of LUT Flip Flop pairs used:   3252
+   Number with an unused Flip Flop:    2468  out of   3252    75%  
+   Number with an unused LUT:           261  out of   3252     8%  
+   Number of fully used LUT-FF pairs:   523  out of   3252    16%  
+   Number of unique control sets:         7
 
 IO Utilization: 
- Number of IOs:                         522
+ Number of IOs:                         523
  Number of bonded IOBs:                   0  out of    232     0%  
 
 Specific Feature Utilization:
@@ -1195,12 +1239,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)  | Load  |
------------------------------------+------------------------+-------+
-clk                                | NONE(done)             | 50    |
-clk                                | DCM_SP:CLKFX           | 768   |
------------------------------------+------------------------+-------+
+-------------------------------------------------------------------------------------------+--------------------------+-------+
+Clock Signal                                                                               | Clock buffer(FF name)    | Load  |
+-------------------------------------------------------------------------------------------+--------------------------+-------+
+clk                                                                                        | NONE(clk_rst)            | 772   |
+clockDivider/tmp                                                                           | BUFG                     | 140   |
+clockDivider/GND_16_o_count[31]_equal_2_o(clockDivider/GND_16_o_count[31]_equal_2_o<31>7:O)| NONE(*)(clockDivider/tmp)| 1     |
+-------------------------------------------------------------------------------------------+--------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -1211,101 +1259,190 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 12.606ns (Maximum Frequency: 79.328MHz)
-   Minimum input arrival time before clock: 4.409ns
-   Maximum output required time after clock: 3.315ns
-   Maximum combinational path delay: 2.309ns
+   Minimum period: 6.128ns (Maximum Frequency: 163.194MHz)
+   Minimum input arrival time before clock: 4.907ns
+   Maximum output required time after clock: 4.783ns
+   Maximum combinational path delay: 3.562ns
 
 Timing Details:
 ---------------
 All values displayed in nanoseconds (ns)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'clk'
-  Clock period: 12.606ns (frequency: 79.328MHz)
-  Total number of paths / destination ports: 18043 / 1836
+Timing constraint: Default period analysis for Clock 'clockDivider/tmp'
+  Clock period: 6.128ns (frequency: 163.194MHz)
+  Total number of paths / destination ports: 56295 / 1302
 -------------------------------------------------------------------------
-Delay:               4.202ns (Levels of Logic = 4)
-  Source:            roundCounter/round_3_1 (FF)
-  Destination:       encrypter/reg0_127 (FF)
-  Source Clock:      clk rising
-  Destination Clock: clk rising 3.0X
+Delay:               6.128ns (Levels of Logic = 6)
+  Source:            roundCounter/round_0_1 (FF)
+  Destination:       keyScheduler/keyRAM/Mram_keys8 (RAM)
+  Source Clock:      clockDivider/tmp rising
+  Destination Clock: clockDivider/tmp rising
 
-  Data Path: roundCounter/round_3_1 to encrypter/reg0_127
+  Data Path: roundCounter/round_0_1 to keyScheduler/keyRAM/Mram_keys8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.447   0.924  roundCounter/round_3_1 (roundCounter/round_3_1)
-     LUT6:I1->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
-     LUT6:I5->O            1   0.205   0.580  decrypter/Mxor_from_addrkey_126_xo<0>1 (decrypter/from_addrkey<126>)
-     LUT4:I3->O            1   0.205   0.000  decrypter/reg0_126_dpot (decrypter/reg0_126_dpot)
-     FDE:D                     0.102          decrypter/reg0_126
+     FDR:C->Q             12   0.447   1.137  roundCounter/round_0_1 (roundCounter/round_0_1)
+     LUT4:I1->O           11   0.205   0.882  keyScheduler/r_addr<1>1_2 (keyScheduler/r_addr<1>1_1)
+     RAM16X1D:DPRA1->DPO   36   0.205   1.713  keyScheduler/keyRAM/Mram_keys28 (roundKey<27>)
+     LUT6:I0->O            1   0.203   0.000  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12 (keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12)
+     MUXF7:I1->O           1   0.140   0.000  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f7 (keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f7)
+     MUXF8:I1->O           4   0.152   0.788  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f8 (keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<6>)
+     LUT6:I4->O            1   0.203   0.000  keyScheduler/Mmux_w_key95 (keyScheduler/w_key<6>)
+     RAM16X1D:D                0.053          keyScheduler/keyRAM/Mram_keys7
     ----------------------------------------
-    Total                      4.202ns (1.367ns logic, 2.835ns route)
-                                       (32.5% logic, 67.5% route)
+    Total                      6.128ns (1.608ns logic, 4.520ns route)
+                                       (26.2% logic, 73.8% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.260ns (frequency: 306.758MHz)
+  Total number of paths / destination ports: 10305 / 769
+-------------------------------------------------------------------------
+Delay:               3.260ns (Levels of Logic = 2)
+  Source:            decrypter/reg0_110 (FF)
+  Destination:       decrypter/reg1_117 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: decrypter/reg0_110 to decrypter/reg1_117
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             22   0.447   1.478  decrypter/reg0_110 (decrypter/reg0_110)
+     LUT5:I0->O            1   0.203   0.827  decrypter/invMix0_Mram_d[15]_PWR_10_o_wide_mux_8_OUT3111 (decrypter/invMix0/d[15]_PWR_10_o_wide_mux_8_OUT<1>)
+     LUT6:I2->O            1   0.203   0.000  decrypter/mux14311 (decrypter/from_reg1_mux<113>)
+     FDE:D                     0.102          decrypter/reg1_113
+    ----------------------------------------
+    Total                      3.260ns (0.955ns logic, 2.305ns route)
+                                       (29.3% logic, 70.7% route)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clockDivider/GND_16_o_count[31]_equal_2_o'
+  Clock period: 1.899ns (frequency: 526.676MHz)
+  Total number of paths / destination ports: 1 / 1
+-------------------------------------------------------------------------
+Delay:               1.899ns (Levels of Logic = 1)
+  Source:            clockDivider/tmp (LATCH)
+  Destination:       clockDivider/tmp (LATCH)
+  Source Clock:      clockDivider/GND_16_o_count[31]_equal_2_o falling
+  Destination Clock: clockDivider/GND_16_o_count[31]_equal_2_o falling
+
+  Data Path: clockDivider/tmp to clockDivider/tmp
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDC:G->Q              1   0.498   0.579  clockDivider/tmp (clockDivider/tmp)
+     INV:I->O              1   0.206   0.579  clockDivider/tmp_INV_32_o1_INV_0 (clockDivider/tmp_INV_32_o)
+     LDC:D                     0.037          clockDivider/tmp
+    ----------------------------------------
+    Total                      1.899ns (0.741ns logic, 1.158ns route)
+                                       (39.0% logic, 61.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
-  Total number of paths / destination ports: 2774 / 1271
+  Total number of paths / destination ports: 3078 / 1027
 -------------------------------------------------------------------------
-Offset:              4.409ns (Levels of Logic = 4)
+Offset:              4.006ns (Levels of Logic = 3)
   Source:            dec (PAD)
-  Destination:       keyScheduler/keyRAM/Mram_keys6 (RAM)
+  Destination:       decrypter/reg0_126 (FF)
   Destination Clock: clk rising
 
-  Data Path: dec to keyScheduler/keyRAM/Mram_keys6
+  Data Path: dec to decrypter/reg0_126
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT6:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    5   0.205   1.079  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
-     LUT6:I0->O            3   0.203   0.651  keyScheduler/keyExpand/next_key_1<30>11 (keyScheduler/keyExpand/next_key_1<30>_bdd0)
-     LUT6:I5->O            1   0.205   0.579  keyScheduler/Mmux_w_key521 (keyScheduler/w_key<30>)
-     RAM32M:DIA0               0.303          keyScheduler/keyRAM/Mram_keys6
+     LUT6:I0->O           90   0.203   1.811  keyScheduler/r_addr<3>1 (keyScheduler/r_addr<3>)
+     RAM16X1D:DPRA3->DPO    7   0.205   1.118  keyScheduler/keyRAM/Mram_keys98 (roundKey<97>)
+     LUT6:I1->O            1   0.203   0.000  decrypter/Mxor_from_addrkey_97_xo<0>1 (decrypter/from_addrkey<97>)
+     FDE:D                     0.102          decrypter/reg0_97
     ----------------------------------------
-    Total                      4.409ns (1.484ns logic, 2.925ns route)
-                                       (33.7% logic, 66.3% route)
+    Total                      4.006ns (1.078ns logic, 2.928ns route)
+                                       (26.9% logic, 73.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clockDivider/tmp'
+  Total number of paths / destination ports: 12779 / 1164
+-------------------------------------------------------------------------
+Offset:              4.907ns (Levels of Logic = 6)
+  Source:            dec (PAD)
+  Destination:       keyScheduler/keyRAM/Mram_keys8 (RAM)
+  Destination Clock: clockDivider/tmp rising
+
+  Data Path: dec to keyScheduler/keyRAM/Mram_keys8
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LUT6:I0->O           11   0.203   0.882  keyScheduler/r_addr<3>1_2 (keyScheduler/r_addr<3>1_1)
+     RAM16X1D:DPRA3->DPO   36   0.205   1.713  keyScheduler/keyRAM/Mram_keys28 (roundKey<27>)
+     LUT6:I0->O            1   0.203   0.000  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12 (keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12)
+     MUXF7:I1->O           1   0.140   0.000  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f7 (keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f7)
+     MUXF8:I1->O           4   0.152   0.788  keyScheduler/keyExpand_Mram_d[31]_GND_14_o_wide_mux_5_OUT12_f8 (keyScheduler/keyExpand/d[31]_GND_14_o_wide_mux_5_OUT<6>)
+     LUT6:I4->O            1   0.203   0.000  keyScheduler/Mmux_w_key95 (keyScheduler/w_key<6>)
+     RAM16X1D:D                0.053          keyScheduler/keyRAM/Mram_keys7
+    ----------------------------------------
+    Total                      4.907ns (1.524ns logic, 3.383ns route)
+                                       (31.1% logic, 68.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
-  Total number of paths / destination ports: 570 / 262
+  Total number of paths / destination ports: 256 / 128
 -------------------------------------------------------------------------
-Offset:              3.315ns (Levels of Logic = 3)
-  Source:            roundCounter/round_3_1 (FF)
+Offset:              1.514ns (Levels of Logic = 1)
+  Source:            decrypter/reg2_127 (FF)
   Destination:       q<127> (PAD)
   Source Clock:      clk rising
 
-  Data Path: roundCounter/round_3_1 to q<127>
+  Data Path: decrypter/reg2_127 to q<127>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              1   0.447   0.924  roundCounter/round_3_1 (roundCounter/round_3_1)
-     LUT6:I1->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
-     LUT5:I4->O            0   0.205   0.000  Mmux_q301 (q<126>)
+     FDE:C->Q              2   0.447   0.864  decrypter/reg2_127 (decrypter/reg2_127)
+     LUT5:I1->O            0   0.203   0.000  Mmux_q311 (q<127>)
     ----------------------------------------
-    Total                      3.315ns (1.060ns logic, 2.255ns route)
-                                       (32.0% logic, 68.0% route)
+    Total                      1.514ns (0.650ns logic, 0.864ns route)
+                                       (42.9% logic, 57.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clockDivider/tmp'
+  Total number of paths / destination ports: 3590 / 262
+-------------------------------------------------------------------------
+Offset:              4.783ns (Levels of Logic = 3)
+  Source:            roundCounter/round_0_1 (FF)
+  Destination:       q<126> (PAD)
+  Source Clock:      clockDivider/tmp rising
+
+  Data Path: roundCounter/round_0_1 to q<126>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDR:C->Q             12   0.447   1.137  roundCounter/round_0_1 (roundCounter/round_0_1)
+     LUT4:I1->O           90   0.205   1.811  keyScheduler/r_addr<1>1 (keyScheduler/r_addr<1>)
+     RAM16X1D:DPRA1->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys98 (roundKey<97>)
+     LUT5:I4->O            0   0.205   0.000  Mmux_q1251 (q<97>)
+    ----------------------------------------
+    Total                      4.783ns (1.062ns logic, 3.721ns route)
+                                       (22.2% logic, 77.8% route)
 
 =========================================================================
 Timing constraint: Default path analysis
-  Total number of paths / destination ports: 268 / 130
+  Total number of paths / destination ports: 1024 / 256
 -------------------------------------------------------------------------
-Delay:               2.309ns (Levels of Logic = 3)
+Delay:               3.562ns (Levels of Logic = 3)
   Source:            dec (PAD)
-  Destination:       q<127> (PAD)
+  Destination:       q<126> (PAD)
 
-  Data Path: dec to q<127>
+  Data Path: dec to q<126>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     LUT6:I0->O            2   0.203   0.616  keyScheduler/r_addr<3>1_1 (keyScheduler/r_addr<3>1)
-     RAM16X1D:DPRA3->DPO    5   0.205   0.715  keyScheduler/keyRAM/Mram_keys221 (roundKey<126>)
-     LUT5:I4->O            0   0.205   0.000  Mmux_q301 (q<126>)
+     LUT6:I0->O           90   0.203   1.811  keyScheduler/r_addr<3>1 (keyScheduler/r_addr<3>)
+     RAM16X1D:DPRA3->DPO    7   0.205   0.774  keyScheduler/keyRAM/Mram_keys98 (roundKey<97>)
+     LUT5:I4->O            0   0.205   0.000  Mmux_q1251 (q<97>)
     ----------------------------------------
-    Total                      2.309ns (0.978ns logic, 1.331ns route)
-                                       (42.4% logic, 57.6% route)
+    Total                      3.562ns (0.978ns logic, 2.584ns route)
+                                       (27.5% logic, 72.5% route)
 
 =========================================================================
 
@@ -1313,24 +1450,42 @@ Cross Clock Domains Report:
 --------------------------
 
 Clock to Setup on destination clock clk
----------------+---------+---------+---------+---------+
-               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
----------------+---------+---------+---------+---------+
-clk            |    6.030|         |         |         |
----------------+---------+---------+---------+---------+
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clk             |    3.260|         |         |         |
+clockDivider/tmp|    5.281|         |         |         |
+----------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clockDivider/GND_16_o_count[31]_equal_2_o
+-----------------------------------------+---------+---------+---------+---------+
+                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+-----------------------------------------+---------+---------+---------+---------+
+clk                                      |         |         |    2.516|         |
+clockDivider/GND_16_o_count[31]_equal_2_o|         |         |    1.899|         |
+-----------------------------------------+---------+---------+---------+---------+
+
+Clock to Setup on destination clock clockDivider/tmp
+----------------+---------+---------+---------+---------+
+                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock    |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+----------------+---------+---------+---------+---------+
+clockDivider/tmp|    6.128|         |         |         |
+----------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 21.00 secs
-Total CPU time to Xst completion: 20.86 secs
+Total REAL time to Xst completion: 22.00 secs
+Total CPU time to Xst completion: 21.30 secs
  
 --> 
 
-Total memory usage is 293404 kilobytes
+Total memory usage is 294556 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    1 (   0 filtered)
+Number of warnings :    8 (   0 filtered)
 Number of infos    :   62 (   0 filtered)
 

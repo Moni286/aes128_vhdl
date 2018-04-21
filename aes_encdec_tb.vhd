@@ -51,7 +51,8 @@ ARCHITECTURE behavior OF aes_encdec_tb IS
          round : OUT  std_logic_vector(3 downto 0);
          done : OUT  std_logic;
 			keys_filled_o : OUT std_logic;
-			roundKey : out STD_LOGIC_VECTOR(127 downto 0)
+			roundKey : out STD_LOGIC_VECTOR(127 downto 0);
+			fast_clk_o : OUT STD_LOGIC
         );
     END COMPONENT;
     
@@ -70,9 +71,10 @@ ARCHITECTURE behavior OF aes_encdec_tb IS
    signal done : std_logic;
 	signal keys_filled_o : std_logic := '0';
 	signal roundKey : STD_LOGIC_VECTOR(127 downto 0);
+	signal fast_clk_o : STD_LOGIC;
 
    -- Clock period definitions
-   constant clk_period : time := 10 ns;
+   constant clk_period : time := 4 ns;
  
 BEGIN
  
@@ -88,7 +90,8 @@ BEGIN
           round => round,
           done => done,
 			 keys_filled_o => keys_filled_o,
-			 roundKey => roundKey
+			 roundKey => roundKey,
+			 fast_clk_o => fast_clk_o
         );
 
    -- Clock process definitions
@@ -108,17 +111,36 @@ BEGIN
 		en <= '0';
 		w <= '0';
 		dec <= '1';
-      wait for 100 ns;	
-		key <= x"2b7e151628aed2a6abf7158809cf4f3c";
-		--d <= x"6bc1bee22e409f96e93d7e117393172a"; -- plaintext
+      wait for clk_period * 12;	
+		key <= x"000102030405060708090a0b0c0d0e0f";
 		w <= '1';
-		d <= x"3ad77bb40d7a3660a89ecaf32466ef97"; -- ciphertext
-		--en<='1';
-		wait for clk_period*1;
+		
+		if dec = '0' then
+			d <= x"00112233445566778899aabbccddeeff"; 
+		else
+			d <= x"69c4e0d86a7b0430d8cdb78070b4c55a";
+		end if;
+		
+		wait for clk_period*3;
 		w <= '0';
 		en <= '1';
-      -- insert stimulus here 
-
+		wait for clk_period*32 + 2 ns;
+		
+		if dec = '0' then
+			d <= x"00112233445566778899aabbccddeefa";
+		else
+			d <= x"b9fcb77e29aa246bac091d4767056de9";
+		end if;
+		
+		wait for clk_period;
+		
+		if dec = '0' then
+			d <= x"00112233445566778899aabbccddeefb";
+		else
+			d <= x"96fcb84bd96828a4472715f933fa8cd2";
+		end if;
+		
+		
       wait;
    end process;
 

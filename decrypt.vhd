@@ -62,18 +62,28 @@ signal inv_shift : STD_LOGIC_VECTOR(127 downto 0);
 
 signal from_invSbox : STD_LOGIC_VECTOR(127 downto 0);
 
-signal from_mux : STD_LOGIC_VECTOR(127 downto 0);
+signal from_reg0_mux : STD_LOGIC_VECTOR(127 downto 0);
+signal from_reg1_mux : STD_LOGIC_VECTOR(127 downto 0);
+signal from_reg2_mux : STD_LOGIC_VECTOR(127 downto 0);
+
 signal reg0 : STD_LOGIC_VECTOR(127 downto 0);
 signal reg1 : STD_LOGIC_VECTOR(127 downto 0);
 signal reg2 : STD_LOGIC_VECTOR(127 downto 0);
 
+signal rnd_reg : STD_LOGIC;
+
 begin
 	
-	with round_number select from_mux <= 
+	with round_number select from_reg0_mux <= 
 		state when x"0",
-		reg2 when others;
+		reg2  when others;
 	
-	from_addrkey <= from_mux XOR round_key;
+	with rnd_reg select from_reg1_mux <=
+		reg0 when '1',
+		from_mix when others;
+		
+	
+	from_addrkey <= from_reg0_mux XOR round_key;
 	
 	invMix0 : inv_mixcolumns PORT MAP(reg0(127 downto 96), from_mix0);
 	invMix1 : inv_mixcolumns PORT MAP(reg0(95 downto 64), from_mix1);
@@ -106,17 +116,18 @@ begin
 	PROCESS(clk)
 	BEGIN
 		if rising_edge(clk) then
-			if en = '1' then
-				if round_number = x"0" then
-					reg1 <= reg0;
-				else
-					reg1 <= from_mix;
+				if en = '1' then
+					reg0 <= from_addrkey;
+					reg1 <= from_reg1_mux;
+					reg2 <= from_invSbox;
+					
+					if round_number = x"0" then
+						rnd_reg <= '1';
+					else
+						rnd_reg <= '0';
+					end if;
 				end if;
 				
-				reg0 <= from_addrkey;
-				reg2 <= from_invSbox;
-				
-			end if;
 		end if;
 	END PROCESS;
 end Behavioral;

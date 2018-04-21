@@ -1,0 +1,7 @@
+
+#Created by Constraints Editor (xc6slx16-csg324-3) - 2018/02/24
+NET "clk" TNM_NET = clk;
+TIMESPEC TS_clk = PERIOD "clk" 2.857 ns HIGH 50%;
+#Created by Constraints Editor (xc6vlx75t-ff484-3) - 2018/04/22
+NET "clockDivider/tmp" TNM_NET = clockDivider/tmp;
+TIMESPEC TS_clockDivider_tmp = PERIOD "clockDivider/tmp" TS_clk * 3 HIGH 50%;

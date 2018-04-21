@@ -2,28 +2,11 @@ Command line:
    aes_encdec_tb_isim_beh.exe
      -simmode  gui
      -simrunnum  0
-     -socket  50317
+     -socket  49343
 
-Sat Feb 24 20:10:49 2018
+Sun Apr 22 01:27:34 2018
 
-
- Elaboration Time: 0.0624 sec
-
- Current Memory Usage: 682.627 Meg
-
- Total Signals          : 325
- Total Nets             : 6002
- Total Signal Drivers   : 219
- Total Blocks           : 31
- Total Primitive Blocks : 25
- Total Processes        : 153
- Total Traceable Variables  : 185
- Total Scalar Nets and Variables : 66237
-Total Line Count : 876
-
- Total Simulation Time: 0.265201 sec
-
- Current Memory Usage: 682.627 Meg
-
-Sat Feb 24 20:12:47 2018
+Resolution function required for the Net /aes_encdec_tb/uut/clockDivider/count driven by:
+/aes_encdec_tb/uut/clockDivider//clock_divider.vhd:17
+/aes_encdec_tb/uut/clockDivider//clock_divider.vhd:26
 
